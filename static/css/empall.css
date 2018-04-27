@@ -1,0 +1,53 @@
+.title-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.title-right{
+  float: right;
+  width: 50%;
+  text-align: center;
+}
+
+.half-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.half-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+.column-left{
+  float: left;
+  width: 33%;
+  text-align: left;
+}
+.column-center{
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+}
+.column-right{
+  float: right;
+  width: 33%;
+  text-align: right;
+}
+.center-contents{
+  text-align: center;
+}
+
+@media all {
+	.page-break	{ display: none; }
+}
+
+@media print {
+  
+	.page-break	{ display: block; page-break-before: always; }
+	
+	a:link:after, a:visited:after {
+    content: "";
+  }
+}
