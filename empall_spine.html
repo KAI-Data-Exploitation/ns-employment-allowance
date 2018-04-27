@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="empall_spine_files/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="empall_spine_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="empall_spine_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="empall_spine_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="empall_spine_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="empall_spine_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="empall_spine_files/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="empall_spine_files/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="empall_spine_files/navigation-1.1/tabsets.js"></script>
+<link href="empall_spine_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="empall_spine_files/highlightjs-9.12.0/highlight.js"></script>
+<script src="empall_spine_files/htmlwidgets-1.0/htmlwidgets.js"></script>
+<link href="empall_spine_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="empall_spine_files/datatables-binding-0.4/datatables.js"></script>
+<link href="empall_spine_files/dt-core-bootstrap-1.10.16/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="empall_spine_files/dt-core-bootstrap-1.10.16/css/dataTables.bootstrap.extra.css" rel="stylesheet" />
+<script src="empall_spine_files/dt-core-bootstrap-1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="empall_spine_files/dt-core-bootstrap-1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="empall_spine_files/jszip-1.10.16/jszip.min.js"></script>
+<script src="empall_spine_files/pdfmake-1.10.16/pdfmake.min.js"></script>
+<script src="empall_spine_files/pdfmake-1.10.16/vfs_fonts.js"></script>
+<link href="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/css/buttons.bootstrap.min.css" rel="stylesheet" />
+<script src="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/js/dataTables.buttons.min.js"></script>
+<script src="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/js/buttons.flash.min.js"></script>
+<script src="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/js/buttons.html5.min.js"></script>
+<script src="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/js/buttons.colVis.min.js"></script>
+<script src="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/js/buttons.print.min.js"></script>
+<script src="empall_spine_files/dt-ext-buttons-bootstrap-1.10.16/js/buttons.bootstrap.min.js"></script>
+<link href="empall_spine_files/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="empall_spine_files/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="empall_spine_files/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="empall_spine_files/selectize-0.12.0/selectize.min.js"></script>
+<link href="empall_spine_files/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="empall_spine_files/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="static/css/empall.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div class="row">
+<div class="col-sm-6">
+<p><img src="static/img/hmrc.svg" /><br />
+<br/><br/> <b> Coverage:<br />
+United Kingdom</p>
+<p>Theme: The Economy</p>
+<p>Released:<br />
+27 April 2017</p>
+<p>Next release:<br />
+Spring 2018</p>
+<p>Frequency of release:<br />
+Annual</p>
+<p><br/></p>
+<p>Media contact:<br />
+HMRC Press Office<br />
+03000 585 024</p>
+<p>Statistical contacts:<br />
+David McDonald<br />
+03000 561 367<br />
+<a href="mailto:david.mcdonald@hmrc.gsi.gov.uk">david.mcdonald@hmrc.gsi.gov.uk</a></p>
+<p>Cathal McDermott<br />
+03000 584 769<br />
+<a href="mailto:cathal.mcdermott@hmrc.gsi.gov.uk">cathal.mcdermott@hmrc.gsi.gov.uk</a></p>
+<p>KAI Personal Taxes<br />
+HM Revenue and Customs<br />
+100 Parliament Street<br />
+London<br />
+SW1A 2BQ</p>
+<p>Website: <a href="https://www.gov.uk/government/collections/employment-allowance-take-up-statistics" class="uri">https://www.gov.uk/government/collections/employment-allowance-take-up-statistics</a> </b></p>
+</div>
+<div class="col-sm-6 center-contents">
+<p><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></p>
+<h1 id="employment-allowance-take-up"><strong>Employment Allowance take-up</strong> <br/></h1>
+<p style="font-size: 35px; font-weight: bold;">
+2016-17 full year estimates <br/><br/> Official Statistics <br/> April 2017
+</p>
+</div>
+</div>
+<p><br></p>
+<div class="row">
+<div class="col-sm-12">
+<div class="page-break">
+
+</div>
+<h1 id="introduction">1 Introduction</h1>
+<p><b>Employment Allowance take-up statistics</b></p>
+<p>This release covers take-up of the Employment Allowance (EA) for the full tax year 2016-17. The EA came into effect in April 2014 and provided eligible employers with a reduction of up to £2,000 in their National Insurance contributions (NICs) which they pay on their employees. In April 2016, the allowance rose to £3,000. The allowance is available to business, charities, amateur sports clubs and, from April 2015, domestic employers of care and support workers.</p>
+<p>However, from April 2016 limited companies where the director is the only employee paid earnings above the Secondary Threshold for Class 1 National Insurance contributions have no longer been able to claim the allowance. As expected this policy change has led to an overall decrease in the numbers taking up the EA in 2016-17 from 2015-16 with take-up decreasing by around 120,000 (9%). This has decreased take-up of the allowance across regions, sectors, constituencies and small employers where there are concentrations of companies affected by this measure. Other domestic employers and public sector employers whose work is wholly or partly (&gt;50%) of a public nature are not eligible for the allowance.</p>
+<p>The EA can be claimed through an employer’s payroll system which is then processed through HMRC’s Real Time Information (RTI) systems. An employer can claim their eligibility for the allowance by submitting an Employer Payment Summary (EPS). When an employer then sends through their Full Payment Submissions (FPS) when submitting their payroll the EA is offset against their Class 1 secondary NICs liabilities due on their employee(s). An employer must generate a NICs liability to benefit from the allowance. The amount of Class 1 secondary NICs due for payment can be reduced by a maximum of £3,000 in a given tax year.</p>
+<p>In this release, employers are classified as having taken up the EA if they have both claimed eligibility and had some amount of the EA offset against the amount of Class 1 secondary NICs which they pay to HMRC.</p>
+<p><br></p>
+<div class="page-break">
+
+</div>
+<h1 id="take-up-by-region">2 Take-up by Region</h1>
+<table class="gmisc_table" style="border-collapse: collapse; width: 80%; table-layout: auto; word-wrap: break-word;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: left;">
+Region
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+Employers<br>benefiting
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+As a percentage of all<br>employers benefitting
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+North East
+</td>
+<td style="text-align: right;">
+35,000
+</td>
+<td style="text-align: right;">
+3%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+North West
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+118,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+10%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Yorkshire and The Humber
+</td>
+<td style="text-align: right;">
+86,000
+</td>
+<td style="text-align: right;">
+7%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+East Midlands
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+80,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+7%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+West Midlands
+</td>
+<td style="text-align: right;">
+99,000
+</td>
+<td style="text-align: right;">
+8%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+East of England
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+119,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+10%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+London
+</td>
+<td style="text-align: right;">
+206,000
+</td>
+<td style="text-align: right;">
+18%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+South East
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+168,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+14%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+South West
+</td>
+<td style="text-align: right;">
+100,000
+</td>
+<td style="text-align: right;">
+9%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Wales
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+45,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+4%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Scotland
+</td>
+<td style="text-align: right;">
+83,000
+</td>
+<td style="text-align: right;">
+7%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Northern Ireland
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+30,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+3%
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: left;">
+United Kingdom
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: right;">
+1,170,000
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: right;">
+100%
+</td>
+</tr>
+</tbody>
+</table>
+<font size=1px>
+<p style="line-height:1.4">
+1 Figures are rounded to the nearest 1,000.<br />
+2 Total may not necessarily add up to the sum of the regions due to rounding and small numbers of employers which fall outside these regions (such as the Channel Islands).<br />
+3 Take up estimates are based on information from HMRC’s Real Time Information (RTI) and Enterprise Tax Management Platform (ETMP) data systems.<br />
+4 Cases without region information have been apportioned across regions based on the distribution of cases where region information is known.<br />
+5 Location is taken from the postcode of the PAYE scheme which is benefitting from the Employment Allowance.
+</p>
+<p></font> <br></p>
+<p><img src="empall_spine_files/figure-html/unnamed-chunk-11-1.png" width="864" /></p>
+<div class="page-break">
+
+</div>
+<h1 id="take-up-by-sector">3 Take-up by Sector</h1>
+<table class="gmisc_table" style="border-collapse: collapse; width: 100%; table-layout: auto; word-wrap: break-word;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: left;">
+Sector
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+Employers benefiting
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+As a percentage of all employers benefitting
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+Accommodation and Food Service Activities
+</td>
+<td style="text-align: right;">
+103,000
+</td>
+<td style="text-align: right;">
+9%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Activities of Households as Employers; Undifferentiated Goods-and Services-Producing Activities of Households for Own Use
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+30,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+3%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Administrative and Support Service Activities
+</td>
+<td style="text-align: right;">
+112,000
+</td>
+<td style="text-align: right;">
+10%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Agriculture, Forestry and Fishing
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+28,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+2%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Arts, Entertainment and Recreation
+</td>
+<td style="text-align: right;">
+24,000
+</td>
+<td style="text-align: right;">
+2%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Construction
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+127,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+11%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Education
+</td>
+<td style="text-align: right;">
+24,000
+</td>
+<td style="text-align: right;">
+2%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Electricity, Gas, Steam and Air Conditioning Supply
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+1,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+&lt;1%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Financial and Insurance Activities
+</td>
+<td style="text-align: right;">
+19,000
+</td>
+<td style="text-align: right;">
+2%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Human Health and Social Work Activities
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+64,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+5%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Information and Communication
+</td>
+<td style="text-align: right;">
+67,000
+</td>
+<td style="text-align: right;">
+6%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Manufacturing
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+74,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+6%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Mining and Quarrying
+</td>
+<td style="text-align: right;">
+1,000
+</td>
+<td style="text-align: right;">
+&lt;1%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Other Service Activities
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+66,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+6%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Professional, Scientific and Technical Activities
+</td>
+<td style="text-align: right;">
+164,000
+</td>
+<td style="text-align: right;">
+14%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Public Administration and Defence; Compulsory Social Security
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+&lt;1,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+&lt;1%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Real Estate Activities
+</td>
+<td style="text-align: right;">
+28,000
+</td>
+<td style="text-align: right;">
+2%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Transportation and Storage
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+40,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+3%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+Water Supply; Sewerage, Waste Management and Remediation Activities
+</td>
+<td style="text-align: right;">
+4,000
+</td>
+<td style="text-align: right;">
+&lt;1%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+Wholesale and Retail Trade; Repair of Motor Vehicles and Motorcycles
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+194,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+17%
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: left;">
+All Sectors
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: right;">
+1,170,000
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: right;">
+100%
+</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:10px; line-height:1.4;">
+<sup>1</sup> Figures are rounded to the nearest 1,000.<br />
+<sup>2</sup> Total may not necessarily add up to the sum of the sectors due to rounding and small numbers of employers which fall in sectors which are typically excluded from the allowance (i.e. public sector).<br />
+<sup>3</sup> Take up estimates are based on information from HMRC’s Real Time Information (RTI) and Enterprise Tax Management Platform (ETMP) data systems.<br />
+<sup>4</sup> Cases without sector information have been apportioned across sectors based on the distribution of cases where sector information is known.
+</p>
+<p><br></p>
+<p><img src="empall_spine_files/figure-html/unnamed-chunk-13-1.png" width="864" /></p>
+<div class="page-break">
+
+</div>
+<h1 id="take-up-by-parliamentary-constituency">4 Take-up by Parliamentary Constituency</h1>
+<div id="htmlwidget-34ef4dd8d5ce5b1b5a76" style="width:800px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-34ef4dd8d5ce5b1b5a76">{"x":{"style":"bootstrap","filter":"top","filterHTML":"<tr>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;East Midlands&quot;,&quot;East of England&quot;,&quot;London&quot;,&quot;North East&quot;,&quot;North West&quot;,&quot;Northern Ireland&quot;,&quot;Scotland&quot;,&quot;South East&quot;,&quot;South West&quot;,&quot;Wales&quot;,&quot;West Midlands&quot;,&quot;Yorkshire and The Humber&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"factor\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"width: 100%; display: none;\">\n      <select multiple=\"multiple\" style=\"width: 100%;\" data-options=\"[&quot;Aberavon&quot;,&quot;Aberconwy&quot;,&quot;Aberdeen North&quot;,&quot;Aberdeen South&quot;,&quot;Airdrie and Shotts&quot;,&quot;Aldershot&quot;,&quot;Aldridge-Brownhills&quot;,&quot;Altrincham and Sale West&quot;,&quot;Alyn and Deeside&quot;,&quot;Amber Valley&quot;,&quot;Angus&quot;,&quot;Arfon&quot;,&quot;Argyll and Bute&quot;,&quot;Arundel and South Downs&quot;,&quot;Ashfield&quot;,&quot;Ashford&quot;,&quot;Ashton-under-Lyne&quot;,&quot;Aylesbury&quot;,&quot;Ayr, Carrick and Cumnock&quot;,&quot;Banbury&quot;,&quot;Banff and Buchan&quot;,&quot;Barking&quot;,&quot;Barnsley Central&quot;,&quot;Barnsley East&quot;,&quot;Barrow and Furness&quot;,&quot;Basildon and Billericay&quot;,&quot;Basingstoke&quot;,&quot;Bassetlaw&quot;,&quot;Bath&quot;,&quot;Batley and Spen&quot;,&quot;Battersea&quot;,&quot;Beaconsfield&quot;,&quot;Beckenham&quot;,&quot;Bedford&quot;,&quot;Belfast East&quot;,&quot;Belfast North&quot;,&quot;Belfast South&quot;,&quot;Belfast West&quot;,&quot;Bermondsey and Old Southwark&quot;,&quot;Berwick-upon-Tweed&quot;,&quot;Berwickshire, Roxburgh and Selkirk&quot;,&quot;Bethnal Green and Bow&quot;,&quot;Beverley and Holderness&quot;,&quot;Bexhill and Battle&quot;,&quot;Bexleyheath and Crayford&quot;,&quot;Birkenhead&quot;,&quot;Birmingham, Edgbaston&quot;,&quot;Birmingham, Erdington&quot;,&quot;Birmingham, Hall Green&quot;,&quot;Birmingham, Hodge Hill&quot;,&quot;Birmingham, Ladywood&quot;,&quot;Birmingham, Northfield&quot;,&quot;Birmingham, Perry Barr&quot;,&quot;Birmingham, Selly Oak&quot;,&quot;Birmingham, Yardley&quot;,&quot;Bishop Auckland&quot;,&quot;Blackburn&quot;,&quot;Blackley and Broughton&quot;,&quot;Blackpool North and Cleveleys&quot;,&quot;Blackpool South&quot;,&quot;Blaenau Gwent&quot;,&quot;Blaydon&quot;,&quot;Blyth Valley&quot;,&quot;Bognor Regis and Littlehampton&quot;,&quot;Bolsover&quot;,&quot;Bolton North East&quot;,&quot;Bolton South East&quot;,&quot;Bolton West&quot;,&quot;Bootle&quot;,&quot;Boston and Skegness&quot;,&quot;Bosworth&quot;,&quot;Bournemouth East&quot;,&quot;Bournemouth West&quot;,&quot;Bracknell&quot;,&quot;Bradford East&quot;,&quot;Bradford South&quot;,&quot;Bradford West&quot;,&quot;Braintree&quot;,&quot;Brecon and Radnorshire&quot;,&quot;Brent Central&quot;,&quot;Brent North&quot;,&quot;Brentford and Isleworth&quot;,&quot;Brentwood and Ongar&quot;,&quot;Bridgend&quot;,&quot;Bridgwater and West Somerset&quot;,&quot;Brigg and Goole&quot;,&quot;Brighton, Kemptown&quot;,&quot;Brighton, Pavilion&quot;,&quot;Bristol East&quot;,&quot;Bristol North West&quot;,&quot;Bristol South&quot;,&quot;Bristol West&quot;,&quot;Broadland&quot;,&quot;Bromley and Chislehurst&quot;,&quot;Bromsgrove&quot;,&quot;Broxbourne&quot;,&quot;Broxtowe&quot;,&quot;Buckingham&quot;,&quot;Burnley&quot;,&quot;Burton&quot;,&quot;Bury North&quot;,&quot;Bury South&quot;,&quot;Bury St Edmunds&quot;,&quot;Caerphilly&quot;,&quot;Caithness, Sutherland and Easter Ross&quot;,&quot;Calder Valley&quot;,&quot;Camberwell and Peckham&quot;,&quot;Camborne and Redruth&quot;,&quot;Cambridge&quot;,&quot;Cannock Chase&quot;,&quot;Canterbury&quot;,&quot;Cardiff Central&quot;,&quot;Cardiff North&quot;,&quot;Cardiff South and Penarth&quot;,&quot;Cardiff West&quot;,&quot;Carlisle&quot;,&quot;Carmarthen East and Dinefwr&quot;,&quot;Carmarthen West and South Pembrokeshire&quot;,&quot;Carshalton and Wallington&quot;,&quot;Castle Point&quot;,&quot;Central Ayrshire&quot;,&quot;Central Devon&quot;,&quot;Central Suffolk and North Ipswich&quot;,&quot;Ceredigion&quot;,&quot;Charnwood&quot;,&quot;Chatham and Aylesford&quot;,&quot;Cheadle&quot;,&quot;Chelmsford&quot;,&quot;Chelsea and Fulham&quot;,&quot;Cheltenham&quot;,&quot;Chesham and Amersham&quot;,&quot;Chesterfield&quot;,&quot;Chichester&quot;,&quot;Chingford and Woodford Green&quot;,&quot;Chippenham&quot;,&quot;Chipping Barnet&quot;,&quot;Chorley&quot;,&quot;Christchurch&quot;,&quot;Cities of London and Westminster&quot;,&quot;City of Chester&quot;,&quot;City of Durham&quot;,&quot;Clacton&quot;,&quot;Cleethorpes&quot;,&quot;Clwyd South&quot;,&quot;Clwyd West&quot;,&quot;Coatbridge, Chryston and Bellshill&quot;,&quot;Colchester&quot;,&quot;Colne Valley&quot;,&quot;Congleton&quot;,&quot;Copeland&quot;,&quot;Corby&quot;,&quot;Coventry North East&quot;,&quot;Coventry North West&quot;,&quot;Coventry South&quot;,&quot;Crawley&quot;,&quot;Crewe and Nantwich&quot;,&quot;Croydon Central&quot;,&quot;Croydon North&quot;,&quot;Croydon South&quot;,&quot;Cumbernauld, Kilsyth and Kirkintilloch East&quot;,&quot;Cynon Valley&quot;,&quot;Dagenham and Rainham&quot;,&quot;Darlington&quot;,&quot;Dartford&quot;,&quot;Daventry&quot;,&quot;Delyn&quot;,&quot;Denton and Reddish&quot;,&quot;Derby North&quot;,&quot;Derby South&quot;,&quot;Derbyshire Dales&quot;,&quot;Devizes&quot;,&quot;Dewsbury&quot;,&quot;Don Valley&quot;,&quot;Doncaster Central&quot;,&quot;Doncaster North&quot;,&quot;Dover&quot;,&quot;Dudley North&quot;,&quot;Dudley South&quot;,&quot;Dulwich and West Norwood&quot;,&quot;Dumfries and Galloway&quot;,&quot;Dumfriesshire, Clydesdale and Tweeddale&quot;,&quot;Dundee East&quot;,&quot;Dundee West&quot;,&quot;Dunfermline and West Fife&quot;,&quot;Dwyfor Meirionnydd&quot;,&quot;Ealing Central and Acton&quot;,&quot;Ealing North&quot;,&quot;Ealing, Southall&quot;,&quot;Easington&quot;,&quot;East Antrim&quot;,&quot;East Devon&quot;,&quot;East Dunbartonshire&quot;,&quot;East Ham&quot;,&quot;East Hampshire&quot;,&quot;East Kilbride, Strathaven and Lesmahagow&quot;,&quot;East Londonderry&quot;,&quot;East Lothian&quot;,&quot;East Renfrewshire&quot;,&quot;East Surrey&quot;,&quot;East Worthing and Shoreham&quot;,&quot;East Yorkshire&quot;,&quot;Eastbourne&quot;,&quot;Eastleigh&quot;,&quot;Eddisbury&quot;,&quot;Edinburgh East&quot;,&quot;Edinburgh North and Leith&quot;,&quot;Edinburgh South&quot;,&quot;Edinburgh South West&quot;,&quot;Edinburgh West&quot;,&quot;Edmonton&quot;,&quot;Ellesmere Port and Neston&quot;,&quot;Elmet and Rothwell&quot;,&quot;Eltham&quot;,&quot;Enfield North&quot;,&quot;Enfield, Southgate&quot;,&quot;Epping Forest&quot;,&quot;Epsom and Ewell&quot;,&quot;Erewash&quot;,&quot;Erith and Thamesmead&quot;,&quot;Esher and Walton&quot;,&quot;Exeter&quot;,&quot;Falkirk&quot;,&quot;Fareham&quot;,&quot;Faversham and Mid Kent&quot;,&quot;Feltham and Heston&quot;,&quot;Fermanagh and South Tyrone&quot;,&quot;Filton and Bradley Stoke&quot;,&quot;Finchley and Golders Green&quot;,&quot;Folkestone and Hythe&quot;,&quot;Forest of Dean&quot;,&quot;Foyle&quot;,&quot;Fylde&quot;,&quot;Gainsborough&quot;,&quot;Garston and Halewood&quot;,&quot;Gateshead&quot;,&quot;Gedling&quot;,&quot;Gillingham and Rainham&quot;,&quot;Glasgow Central&quot;,&quot;Glasgow East&quot;,&quot;Glasgow North&quot;,&quot;Glasgow North East&quot;,&quot;Glasgow North West&quot;,&quot;Glasgow South&quot;,&quot;Glasgow South West&quot;,&quot;Glenrothes&quot;,&quot;Gloucester&quot;,&quot;Gordon&quot;,&quot;Gosport&quot;,&quot;Gower&quot;,&quot;Grantham and Stamford&quot;,&quot;Gravesham&quot;,&quot;Great Grimsby&quot;,&quot;Great Yarmouth&quot;,&quot;Greenwich and Woolwich&quot;,&quot;Guildford&quot;,&quot;Hackney North and Stoke Newington&quot;,&quot;Hackney South and Shoreditch&quot;,&quot;Halesowen and Rowley Regis&quot;,&quot;Halifax&quot;,&quot;Haltemprice and Howden&quot;,&quot;Halton&quot;,&quot;Hammersmith&quot;,&quot;Hampstead and Kilburn&quot;,&quot;Harborough&quot;,&quot;Harlow&quot;,&quot;Harrogate and Knaresborough&quot;,&quot;Harrow East&quot;,&quot;Harrow West&quot;,&quot;Hartlepool&quot;,&quot;Harwich and North Essex&quot;,&quot;Hastings and Rye&quot;,&quot;Havant&quot;,&quot;Hayes and Harlington&quot;,&quot;Hazel Grove&quot;,&quot;Hemel Hempstead&quot;,&quot;Hemsworth&quot;,&quot;Hendon&quot;,&quot;Henley&quot;,&quot;Hereford and South Herefordshire&quot;,&quot;Hertford and Stortford&quot;,&quot;Hertsmere&quot;,&quot;Hexham&quot;,&quot;Heywood and Middleton&quot;,&quot;High Peak&quot;,&quot;Hitchin and Harpenden&quot;,&quot;Holborn and St Pancras&quot;,&quot;Hornchurch and Upminster&quot;,&quot;Hornsey and Wood Green&quot;,&quot;Horsham&quot;,&quot;Houghton and Sunderland South&quot;,&quot;Hove&quot;,&quot;Huddersfield&quot;,&quot;Huntingdon&quot;,&quot;Hyndburn&quot;,&quot;Ilford North&quot;,&quot;Ilford South&quot;,&quot;Inverclyde&quot;,&quot;Inverness, Nairn, Badenoch and Strathspey&quot;,&quot;Ipswich&quot;,&quot;Isle of Wight&quot;,&quot;Islington North&quot;,&quot;Islington South and Finsbury&quot;,&quot;Islwyn&quot;,&quot;Jarrow&quot;,&quot;Keighley&quot;,&quot;Kenilworth and Southam&quot;,&quot;Kensington&quot;,&quot;Kettering&quot;,&quot;Kilmarnock and Loudoun&quot;,&quot;Kingston and Surbiton&quot;,&quot;Kingston upon Hull East&quot;,&quot;Kingston upon Hull North&quot;,&quot;Kingston upon Hull West and Hessle&quot;,&quot;Kingswood&quot;,&quot;Kirkcaldy and Cowdenbeath&quot;,&quot;Knowsley&quot;,&quot;Lagan Valley&quot;,&quot;Lanark and Hamilton East&quot;,&quot;Lancaster and Fleetwood&quot;,&quot;Leeds Central&quot;,&quot;Leeds East&quot;,&quot;Leeds North East&quot;,&quot;Leeds North West&quot;,&quot;Leeds West&quot;,&quot;Leicester East&quot;,&quot;Leicester South&quot;,&quot;Leicester West&quot;,&quot;Leigh&quot;,&quot;Lewes&quot;,&quot;Lewisham East&quot;,&quot;Lewisham West and Penge&quot;,&quot;Lewisham, Deptford&quot;,&quot;Leyton and Wanstead&quot;,&quot;Lichfield&quot;,&quot;Lincoln&quot;,&quot;Linlithgow and East Falkirk&quot;,&quot;Liverpool, Riverside&quot;,&quot;Liverpool, Walton&quot;,&quot;Liverpool, Wavertree&quot;,&quot;Liverpool, West Derby&quot;,&quot;Livingston&quot;,&quot;Llanelli&quot;,&quot;Loughborough&quot;,&quot;Louth and Horncastle&quot;,&quot;Ludlow&quot;,&quot;Luton North&quot;,&quot;Luton South&quot;,&quot;Macclesfield&quot;,&quot;Maidenhead&quot;,&quot;Maidstone and The Weald&quot;,&quot;Makerfield&quot;,&quot;Maldon&quot;,&quot;Manchester Central&quot;,&quot;Manchester, Gorton&quot;,&quot;Manchester, Withington&quot;,&quot;Mansfield&quot;,&quot;Meon Valley&quot;,&quot;Meriden&quot;,&quot;Merthyr Tydfil and Rhymney&quot;,&quot;Mid Bedfordshire&quot;,&quot;Mid Derbyshire&quot;,&quot;Mid Dorset and North Poole&quot;,&quot;Mid Norfolk&quot;,&quot;Mid Sussex&quot;,&quot;Mid Ulster&quot;,&quot;Mid Worcestershire&quot;,&quot;Middlesbrough&quot;,&quot;Middlesbrough South and East Cleveland&quot;,&quot;Midlothian&quot;,&quot;Milton Keynes North&quot;,&quot;Milton Keynes South&quot;,&quot;Mitcham and Morden&quot;,&quot;Mole Valley&quot;,&quot;Monmouth&quot;,&quot;Montgomeryshire&quot;,&quot;Moray&quot;,&quot;Morecambe and Lunesdale&quot;,&quot;Morley and Outwood&quot;,&quot;Motherwell and Wishaw&quot;,&quot;Na h-Eileanan an Iar&quot;,&quot;Neath&quot;,&quot;New Forest East&quot;,&quot;New Forest West&quot;,&quot;Newark&quot;,&quot;Newbury&quot;,&quot;Newcastle upon Tyne Central&quot;,&quot;Newcastle upon Tyne East&quot;,&quot;Newcastle upon Tyne North&quot;,&quot;Newcastle-under-Lyme&quot;,&quot;Newport East&quot;,&quot;Newport West&quot;,&quot;Newry and Armagh&quot;,&quot;Newton Abbot&quot;,&quot;Normanton, Pontefract and Castleford&quot;,&quot;North Antrim&quot;,&quot;North Ayrshire and Arran&quot;,&quot;North Cornwall&quot;,&quot;North Devon&quot;,&quot;North Dorset&quot;,&quot;North Down&quot;,&quot;North Durham&quot;,&quot;North East Bedfordshire&quot;,&quot;North East Cambridgeshire&quot;,&quot;North East Derbyshire&quot;,&quot;North East Fife&quot;,&quot;North East Hampshire&quot;,&quot;North East Hertfordshire&quot;,&quot;North East Somerset&quot;,&quot;North Herefordshire&quot;,&quot;North Norfolk&quot;,&quot;North Shropshire&quot;,&quot;North Somerset&quot;,&quot;North Swindon&quot;,&quot;North Thanet&quot;,&quot;North Tyneside&quot;,&quot;North Warwickshire&quot;,&quot;North West Cambridgeshire&quot;,&quot;North West Durham&quot;,&quot;North West Hampshire&quot;,&quot;North West Leicestershire&quot;,&quot;North West Norfolk&quot;,&quot;North Wiltshire&quot;,&quot;Northampton North&quot;,&quot;Northampton South&quot;,&quot;Norwich North&quot;,&quot;Norwich South&quot;,&quot;Nottingham East&quot;,&quot;Nottingham North&quot;,&quot;Nottingham South&quot;,&quot;Nuneaton&quot;,&quot;Ochil and South Perthshire&quot;,&quot;Ogmore&quot;,&quot;Old Bexley and Sidcup&quot;,&quot;Oldham East and Saddleworth&quot;,&quot;Oldham West and Royton&quot;,&quot;Orkney and Shetland&quot;,&quot;Orpington&quot;,&quot;Oxford East&quot;,&quot;Oxford West and Abingdon&quot;,&quot;Paisley and Renfrewshire North&quot;,&quot;Paisley and Renfrewshire South&quot;,&quot;Pendle&quot;,&quot;Penistone and Stocksbridge&quot;,&quot;Penrith and The Border&quot;,&quot;Perth and North Perthshire&quot;,&quot;Peterborough&quot;,&quot;Plymouth, Moor View&quot;,&quot;Plymouth, Sutton and Devonport&quot;,&quot;Pontypridd&quot;,&quot;Poole&quot;,&quot;Poplar and Limehouse&quot;,&quot;Portsmouth North&quot;,&quot;Portsmouth South&quot;,&quot;Preseli Pembrokeshire&quot;,&quot;Preston&quot;,&quot;Pudsey&quot;,&quot;Putney&quot;,&quot;Rayleigh and Wickford&quot;,&quot;Reading East&quot;,&quot;Reading West&quot;,&quot;Redcar&quot;,&quot;Redditch&quot;,&quot;Reigate&quot;,&quot;Rhondda&quot;,&quot;Ribble Valley&quot;,&quot;Richmond (Yorks)&quot;,&quot;Richmond Park&quot;,&quot;Rochdale&quot;,&quot;Rochester and Strood&quot;,&quot;Rochford and Southend East&quot;,&quot;Romford&quot;,&quot;Romsey and Southampton North&quot;,&quot;Ross, Skye and Lochaber&quot;,&quot;Rossendale and Darwen&quot;,&quot;Rother Valley&quot;,&quot;Rotherham&quot;,&quot;Rugby&quot;,&quot;Ruislip, Northwood and Pinner&quot;,&quot;Runnymede and Weybridge&quot;,&quot;Rushcliffe&quot;,&quot;Rutherglen and Hamilton West&quot;,&quot;Rutland and Melton&quot;,&quot;Saffron Walden&quot;,&quot;Salford and Eccles&quot;,&quot;Salisbury&quot;,&quot;Scarborough and Whitby&quot;,&quot;Scunthorpe&quot;,&quot;Sedgefield&quot;,&quot;Sefton Central&quot;,&quot;Selby and Ainsty&quot;,&quot;Sevenoaks&quot;,&quot;Sheffield Central&quot;,&quot;Sheffield South East&quot;,&quot;Sheffield, Brightside and Hillsborough&quot;,&quot;Sheffield, Hallam&quot;,&quot;Sheffield, Heeley&quot;,&quot;Sherwood&quot;,&quot;Shipley&quot;,&quot;Shrewsbury and Atcham&quot;,&quot;Sittingbourne and Sheppey&quot;,&quot;Skipton and Ripon&quot;,&quot;Sleaford and North Hykeham&quot;,&quot;Slough&quot;,&quot;Solihull&quot;,&quot;Somerton and Frome&quot;,&quot;South Antrim&quot;,&quot;South Basildon and East Thurrock&quot;,&quot;South Cambridgeshire&quot;,&quot;South Derbyshire&quot;,&quot;South Dorset&quot;,&quot;South Down&quot;,&quot;South East Cambridgeshire&quot;,&quot;South East Cornwall&quot;,&quot;South Holland and The Deepings&quot;,&quot;South Leicestershire&quot;,&quot;South Norfolk&quot;,&quot;South Northamptonshire&quot;,&quot;South Ribble&quot;,&quot;South Shields&quot;,&quot;South Staffordshire&quot;,&quot;South Suffolk&quot;,&quot;South Swindon&quot;,&quot;South Thanet&quot;,&quot;South West Bedfordshire&quot;,&quot;South West Devon&quot;,&quot;South West Hertfordshire&quot;,&quot;South West Norfolk&quot;,&quot;South West Surrey&quot;,&quot;South West Wiltshire&quot;,&quot;Southampton, Itchen&quot;,&quot;Southampton, Test&quot;,&quot;Southend West&quot;,&quot;Southport&quot;,&quot;Spelthorne&quot;,&quot;St Albans&quot;,&quot;St Austell and Newquay&quot;,&quot;St Helens North&quot;,&quot;St Helens South and Whiston&quot;,&quot;St Ives&quot;,&quot;Stafford&quot;,&quot;Staffordshire Moorlands&quot;,&quot;Stalybridge and Hyde&quot;,&quot;Stevenage&quot;,&quot;Stirling&quot;,&quot;Stockport&quot;,&quot;Stockton North&quot;,&quot;Stockton South&quot;,&quot;Stoke-on-Trent Central&quot;,&quot;Stoke-on-Trent North&quot;,&quot;Stoke-on-Trent South&quot;,&quot;Stone&quot;,&quot;Stourbridge&quot;,&quot;Strangford&quot;,&quot;Stratford-on-Avon&quot;,&quot;Streatham&quot;,&quot;Stretford and Urmston&quot;,&quot;Stroud&quot;,&quot;Suffolk Coastal&quot;,&quot;Sunderland Central&quot;,&quot;Surrey Heath&quot;,&quot;Sutton and Cheam&quot;,&quot;Sutton Coldfield&quot;,&quot;Swansea East&quot;,&quot;Swansea West&quot;,&quot;Tamworth&quot;,&quot;Tatton&quot;,&quot;Taunton Deane&quot;,&quot;Telford&quot;,&quot;Tewkesbury&quot;,&quot;The Cotswolds&quot;,&quot;The Wrekin&quot;,&quot;Thirsk and Malton&quot;,&quot;Thornbury and Yate&quot;,&quot;Thurrock&quot;,&quot;Tiverton and Honiton&quot;,&quot;Tonbridge and Malling&quot;,&quot;Tooting&quot;,&quot;Torbay&quot;,&quot;Torfaen&quot;,&quot;Torridge and West Devon&quot;,&quot;Totnes&quot;,&quot;Tottenham&quot;,&quot;Truro and Falmouth&quot;,&quot;Tunbridge Wells&quot;,&quot;Twickenham&quot;,&quot;Tynemouth&quot;,&quot;Upper Bann&quot;,&quot;Uxbridge and South Ruislip&quot;,&quot;Vale of Clwyd&quot;,&quot;Vale of Glamorgan&quot;,&quot;Vauxhall&quot;,&quot;Wakefield&quot;,&quot;Wallasey&quot;,&quot;Walsall North&quot;,&quot;Walsall South&quot;,&quot;Walthamstow&quot;,&quot;Wansbeck&quot;,&quot;Wantage&quot;,&quot;Warley&quot;,&quot;Warrington North&quot;,&quot;Warrington South&quot;,&quot;Warwick and Leamington&quot;,&quot;Washington and Sunderland West&quot;,&quot;Watford&quot;,&quot;Waveney&quot;,&quot;Wealden&quot;,&quot;Weaver Vale&quot;,&quot;Wellingborough&quot;,&quot;Wells&quot;,&quot;Welwyn Hatfield&quot;,&quot;Wentworth and Dearne&quot;,&quot;West Aberdeenshire and Kincardine&quot;,&quot;West Bromwich East&quot;,&quot;West Bromwich West&quot;,&quot;West Dorset&quot;,&quot;West Dunbartonshire&quot;,&quot;West Ham&quot;,&quot;West Lancashire&quot;,&quot;West Suffolk&quot;,&quot;West Tyrone&quot;,&quot;West Worcestershire&quot;,&quot;Westminster North&quot;,&quot;Westmorland and Lonsdale&quot;,&quot;Weston-Super-Mare&quot;,&quot;Wigan&quot;,&quot;Wimbledon&quot;,&quot;Winchester&quot;,&quot;Windsor&quot;,&quot;Wirral South&quot;,&quot;Wirral West&quot;,&quot;Witham&quot;,&quot;Witney&quot;,&quot;Woking&quot;,&quot;Wokingham&quot;,&quot;Wolverhampton North East&quot;,&quot;Wolverhampton South East&quot;,&quot;Wolverhampton South West&quot;,&quot;Worcester&quot;,&quot;Workington&quot;,&quot;Worsley and Eccles South&quot;,&quot;Worthing West&quot;,&quot;Wrexham&quot;,&quot;Wycombe&quot;,&quot;Wyre and Preston North&quot;,&quot;Wyre Forest&quot;,&quot;Wythenshawe and Sale East&quot;,&quot;Yeovil&quot;,&quot;Ynys Môn&quot;,&quot;York Central&quot;,&quot;York Outer&quot;]\"><\/select>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"400\" data-max=\"20800\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"500\" data-max=\"23700\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"500\" data-max=\"27900\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","class":"table table-striped table-hover","extensions":["Buttons"],"data":[["South East","West Midlands","North West","East Midlands","South East","East Midlands","South East","North West","South East","South East","London","Yorkshire and The Humber","Yorkshire and The Humber","North West","East of England","South East","East Midlands","South West","Yorkshire and The Humber","London","South East","London","East of England","London","North East","London","Yorkshire and The Humber","South East","London","North West","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","North East","North West","North West","North West","North West","North East","North East","South East","East Midlands","North West","North West","North West","North West","East Midlands","East Midlands","South West","South West","South East","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","East of England","London","London","London","East of England","South West","Yorkshire and The Humber","South East","South East","South West","South West","South West","South West","East of England","London","West Midlands","East of England","East Midlands","South East","North West","West Midlands","North West","North West","East of England","Yorkshire and The Humber","London","South West","East of England","West Midlands","South East","North West","London","East of England","South West","East of England","East Midlands","South East","North West","East of England","London","South West","South East","East Midlands","South East","London","South West","London","North West","South West","London","North West","North East","East of England","Yorkshire and The Humber","East of England","Yorkshire and The Humber","North West","North West","East Midlands","West Midlands","West Midlands","West Midlands","South East","North West","London","London","London","London","North East","South East","East Midlands","North West","East Midlands","East Midlands","East Midlands","South West","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","South East","West Midlands","West Midlands","London","London","London","London","North East","South West","London","South East","South East","South East","Yorkshire and The Humber","South East","South East","North West","London","North West","Yorkshire and The Humber","London","London","London","East of England","South East","East Midlands","London","South East","South West","South East","South East","London","South West","London","South East","South West","North West","East Midlands","North West","North East","East Midlands","South East","South West","South East","East Midlands","South East","Yorkshire and The Humber","East of England","London","South East","London","London","West Midlands","Yorkshire and The Humber","Yorkshire and The Humber","North West","London","London","East Midlands","East of England","Yorkshire and The Humber","London","London","North East","East of England","South East","South East","London","North West","East of England","Yorkshire and The Humber","London","South East","West Midlands","East of England","East of England","North East","North West","East Midlands","East of England","London","London","London","South East","North East","South East","Yorkshire and The Humber","East of England","North West","London","London","East of England","South East","London","London","North East","Yorkshire and The Humber","West Midlands","London","East Midlands","London","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","South West","North West","North West","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","East Midlands","East Midlands","East Midlands","North West","South East","London","London","London","London","West Midlands","East Midlands","North West","North West","North West","North West","East Midlands","East Midlands","West Midlands","East of England","East of England","North West","South East","South East","North West","East of England","North West","North West","North West","East Midlands","South East","West Midlands","East of England","East Midlands","South West","East of England","South East","West Midlands","North East","North East","South East","South East","London","South East","North West","Yorkshire and The Humber","South East","South East","East Midlands","South East","North East","North East","North East","West Midlands","South West","Yorkshire and The Humber","South West","South West","South West","North East","East of England","East of England","East Midlands","South East","East of England","South West","West Midlands","East of England","West Midlands","South West","South West","South East","North East","West Midlands","East of England","North East","South East","East Midlands","East of England","South West","East Midlands","East Midlands","East of England","East of England","East Midlands","East Midlands","East Midlands","West Midlands","London","North West","North West","London","South East","South East","North West","Yorkshire and The Humber","North West","East of England","South West","South West","South West","London","South East","South East","North West","Yorkshire and The Humber","London","East of England","South East","South East","North East","West Midlands","South East","North West","Yorkshire and The Humber","London","North West","South East","East of England","London","South East","North West","Yorkshire and The Humber","Yorkshire and The Humber","West Midlands","London","South East","East Midlands","East Midlands","East of England","North West","South West","Yorkshire and The Humber","Yorkshire and The Humber","North East","North West","Yorkshire and The Humber","South East","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","Yorkshire and The Humber","East Midlands","Yorkshire and The Humber","West Midlands","South East","Yorkshire and The Humber","East Midlands","South East","West Midlands","South West","East of England","East of England","East Midlands","South West","East of England","South West","East Midlands","East Midlands","East of England","East Midlands","North West","North East","West Midlands","East of England","South West","South East","East of England","South West","East of England","East of England","South East","South West","South East","South East","East of England","North West","South East","East of England","South West","North West","North West","South West","West Midlands","West Midlands","North West","East of England","North West","North East","North East","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","West Midlands","London","North West","South West","East of England","North East","South East","London","West Midlands","West Midlands","North West","South West","West Midlands","South West","South West","West Midlands","Yorkshire and The Humber","South West","East of England","South West","South East","London","South West","South West","South West","London","South West","South East","London","North East","London","London","Yorkshire and The Humber","North West","West Midlands","West Midlands","London","North East","South East","West Midlands","North West","North West","West Midlands","North East","East of England","East of England","South East","North West","East Midlands","South West","East of England","Yorkshire and The Humber","West Midlands","West Midlands","South West","London","North West","East of England","West Midlands","London","North West","South West","North West","London","South East","South East","North West","North West","East of England","South East","South East","South East","West Midlands","West Midlands","West Midlands","West Midlands","North West","North West","South East","South East","North West","West Midlands","North West","South West","Yorkshire and The Humber","Yorkshire and The Humber","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Northern Ireland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Scotland","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales","Wales"],["Aldershot","Aldridge-Brownhills","Altrincham and Sale West","Amber Valley","Arundel and South Downs","Ashfield","Ashford","Ashton-under-Lyne","Aylesbury","Banbury","Barking","Barnsley Central","Barnsley East","Barrow and Furness","Basildon and Billericay","Basingstoke","Bassetlaw","Bath","Batley and Spen","Battersea","Beaconsfield","Beckenham","Bedford","Bermondsey and Old Southwark","Berwick-upon-Tweed","Bethnal Green and Bow","Beverley and Holderness","Bexhill and Battle","Bexleyheath and Crayford","Birkenhead","Birmingham, Edgbaston","Birmingham, Erdington","Birmingham, Hall Green","Birmingham, Hodge Hill","Birmingham, Ladywood","Birmingham, Northfield","Birmingham, Perry Barr","Birmingham, Selly Oak","Birmingham, Yardley","Bishop Auckland","Blackburn","Blackley and Broughton","Blackpool North and Cleveleys","Blackpool South","Blaydon","Blyth Valley","Bognor Regis and Littlehampton","Bolsover","Bolton North East","Bolton South East","Bolton West","Bootle","Boston and Skegness","Bosworth","Bournemouth East","Bournemouth West","Bracknell","Bradford East","Bradford South","Bradford West","Braintree","Brent Central","Brent North","Brentford and Isleworth","Brentwood and Ongar","Bridgwater and West Somerset","Brigg and Goole","Brighton, Kemptown","Brighton, Pavilion","Bristol East","Bristol North West","Bristol South","Bristol West","Broadland","Bromley and Chislehurst","Bromsgrove","Broxbourne","Broxtowe","Buckingham","Burnley","Burton","Bury North","Bury South","Bury St Edmunds","Calder Valley","Camberwell and Peckham","Camborne and Redruth","Cambridge","Cannock Chase","Canterbury","Carlisle","Carshalton and Wallington","Castle Point","Central Devon","Central Suffolk and North Ipswich","Charnwood","Chatham and Aylesford","Cheadle","Chelmsford","Chelsea and Fulham","Cheltenham","Chesham and Amersham","Chesterfield","Chichester","Chingford and Woodford Green","Chippenham","Chipping Barnet","Chorley","Christchurch","Cities of London and Westminster","City of Chester","City of Durham","Clacton","Cleethorpes","Colchester","Colne Valley","Congleton","Copeland","Corby","Coventry North East","Coventry North West","Coventry South","Crawley","Crewe and Nantwich","Croydon Central","Croydon North","Croydon South","Dagenham and Rainham","Darlington","Dartford","Daventry","Denton and Reddish","Derby North","Derby South","Derbyshire Dales","Devizes","Dewsbury","Don Valley","Doncaster Central","Doncaster North","Dover","Dudley North","Dudley South","Dulwich and West Norwood","Ealing Central and Acton","Ealing North","Ealing, Southall","Easington","East Devon","East Ham","East Hampshire","East Surrey","East Worthing and Shoreham","East Yorkshire","Eastbourne","Eastleigh","Eddisbury","Edmonton","Ellesmere Port and Neston","Elmet and Rothwell","Eltham","Enfield North","Enfield, Southgate","Epping Forest","Epsom and Ewell","Erewash","Erith and Thamesmead","Esher and Walton","Exeter","Fareham","Faversham and Mid Kent","Feltham and Heston","Filton and Bradley Stoke","Finchley and Golders Green","Folkestone and Hythe","Forest of Dean","Fylde","Gainsborough","Garston and Halewood","Gateshead","Gedling","Gillingham and Rainham","Gloucester","Gosport","Grantham and Stamford","Gravesham","Great Grimsby","Great Yarmouth","Greenwich and Woolwich","Guildford","Hackney North and Stoke Newington","Hackney South and Shoreditch","Halesowen and Rowley Regis","Halifax","Haltemprice and Howden","Halton","Hammersmith","Hampstead and Kilburn","Harborough","Harlow","Harrogate and Knaresborough","Harrow East","Harrow West","Hartlepool","Harwich and North Essex","Hastings and Rye","Havant","Hayes and Harlington","Hazel Grove","Hemel Hempstead","Hemsworth","Hendon","Henley","Hereford and South Herefordshire","Hertford and Stortford","Hertsmere","Hexham","Heywood and Middleton","High Peak","Hitchin and Harpenden","Holborn and St Pancras","Hornchurch and Upminster","Hornsey and Wood Green","Horsham","Houghton and Sunderland South","Hove","Huddersfield","Huntingdon","Hyndburn","Ilford North","Ilford South","Ipswich","Isle of Wight","Islington North","Islington South and Finsbury","Jarrow","Keighley","Kenilworth and Southam","Kensington","Kettering","Kingston and Surbiton","Kingston upon Hull East","Kingston upon Hull North","Kingston upon Hull West and Hessle","Kingswood","Knowsley","Lancaster and Fleetwood","Leeds Central","Leeds East","Leeds North East","Leeds North West","Leeds West","Leicester East","Leicester South","Leicester West","Leigh","Lewes","Lewisham East","Lewisham West and Penge","Lewisham, Deptford","Leyton and Wanstead","Lichfield","Lincoln","Liverpool, Riverside","Liverpool, Walton","Liverpool, Wavertree","Liverpool, West Derby","Loughborough","Louth and Horncastle","Ludlow","Luton North","Luton South","Macclesfield","Maidenhead","Maidstone and The Weald","Makerfield","Maldon","Manchester Central","Manchester, Gorton","Manchester, Withington","Mansfield","Meon Valley","Meriden","Mid Bedfordshire","Mid Derbyshire","Mid Dorset and North Poole","Mid Norfolk","Mid Sussex","Mid Worcestershire","Middlesbrough","Middlesbrough South and East Cleveland","Milton Keynes North","Milton Keynes South","Mitcham and Morden","Mole Valley","Morecambe and Lunesdale","Morley and Outwood","New Forest East","New Forest West","Newark","Newbury","Newcastle upon Tyne Central","Newcastle upon Tyne East","Newcastle upon Tyne North","Newcastle-under-Lyme","Newton Abbot","Normanton, Pontefract and Castleford","North Cornwall","North Devon","North Dorset","North Durham","North East Bedfordshire","North East Cambridgeshire","North East Derbyshire","North East Hampshire","North East Hertfordshire","North East Somerset","North Herefordshire","North Norfolk","North Shropshire","North Somerset","North Swindon","North Thanet","North Tyneside","North Warwickshire","North West Cambridgeshire","North West Durham","North West Hampshire","North West Leicestershire","North West Norfolk","North Wiltshire","Northampton North","Northampton South","Norwich North","Norwich South","Nottingham East","Nottingham North","Nottingham South","Nuneaton","Old Bexley and Sidcup","Oldham East and Saddleworth","Oldham West and Royton","Orpington","Oxford East","Oxford West and Abingdon","Pendle","Penistone and Stocksbridge","Penrith and The Border","Peterborough","Plymouth, Moor View","Plymouth, Sutton and Devonport","Poole","Poplar and Limehouse","Portsmouth North","Portsmouth South","Preston","Pudsey","Putney","Rayleigh and Wickford","Reading East","Reading West","Redcar","Redditch","Reigate","Ribble Valley","Richmond (Yorks)","Richmond Park","Rochdale","Rochester and Strood","Rochford and Southend East","Romford","Romsey and Southampton North","Rossendale and Darwen","Rother Valley","Rotherham","Rugby","Ruislip, Northwood and Pinner","Runnymede and Weybridge","Rushcliffe","Rutland and Melton","Saffron Walden","Salford and Eccles","Salisbury","Scarborough and Whitby","Scunthorpe","Sedgefield","Sefton Central","Selby and Ainsty","Sevenoaks","Sheffield Central","Sheffield South East","Sheffield, Brightside and Hillsborough","Sheffield, Hallam","Sheffield, Heeley","Sherwood","Shipley","Shrewsbury and Atcham","Sittingbourne and Sheppey","Skipton and Ripon","Sleaford and North Hykeham","Slough","Solihull","Somerton and Frome","South Basildon and East Thurrock","South Cambridgeshire","South Derbyshire","South Dorset","South East Cambridgeshire","South East Cornwall","South Holland and The Deepings","South Leicestershire","South Norfolk","South Northamptonshire","South Ribble","South Shields","South Staffordshire","South Suffolk","South Swindon","South Thanet","South West Bedfordshire","South West Devon","South West Hertfordshire","South West Norfolk","South West Surrey","South West Wiltshire","Southampton, Itchen","Southampton, Test","Southend West","Southport","Spelthorne","St Albans","St Austell and Newquay","St Helens North","St Helens South and Whiston","St Ives","Stafford","Staffordshire Moorlands","Stalybridge and Hyde","Stevenage","Stockport","Stockton North","Stockton South","Stoke-on-Trent Central","Stoke-on-Trent North","Stoke-on-Trent South","Stone","Stourbridge","Stratford-on-Avon","Streatham","Stretford and Urmston","Stroud","Suffolk Coastal","Sunderland Central","Surrey Heath","Sutton and Cheam","Sutton Coldfield","Tamworth","Tatton","Taunton Deane","Telford","Tewkesbury","The Cotswolds","The Wrekin","Thirsk and Malton","Thornbury and Yate","Thurrock","Tiverton and Honiton","Tonbridge and Malling","Tooting","Torbay","Torridge and West Devon","Totnes","Tottenham","Truro and Falmouth","Tunbridge Wells","Twickenham","Tynemouth","Uxbridge and South Ruislip","Vauxhall","Wakefield","Wallasey","Walsall North","Walsall South","Walthamstow","Wansbeck","Wantage","Warley","Warrington North","Warrington South","Warwick and Leamington","Washington and Sunderland West","Watford","Waveney","Wealden","Weaver Vale","Wellingborough","Wells","Welwyn Hatfield","Wentworth and Dearne","West Bromwich East","West Bromwich West","West Dorset","West Ham","West Lancashire","West Suffolk","West Worcestershire","Westminster North","Westmorland and Lonsdale","Weston-Super-Mare","Wigan","Wimbledon","Winchester","Windsor","Wirral South","Wirral West","Witham","Witney","Woking","Wokingham","Wolverhampton North East","Wolverhampton South East","Wolverhampton South West","Worcester","Workington","Worsley and Eccles South","Worthing West","Wycombe","Wyre and Preston North","Wyre Forest","Wythenshawe and Sale East","Yeovil","York Central","York Outer","Belfast East","Belfast North","Belfast South","Belfast West","East Antrim","East Londonderry","Fermanagh and South Tyrone","Foyle","Lagan Valley","Mid Ulster","Newry and Armagh","North Antrim","North Down","South Antrim","South Down","Strangford","Upper Bann","West Tyrone","Aberdeen North","Aberdeen South","Airdrie and Shotts","Angus","Argyll and Bute","Ayr, Carrick and Cumnock","Banff and Buchan","Berwickshire, Roxburgh and Selkirk","Caithness, Sutherland and Easter Ross","Central Ayrshire","Coatbridge, Chryston and Bellshill","Cumbernauld, Kilsyth and Kirkintilloch East","Dumfries and Galloway","Dumfriesshire, Clydesdale and Tweeddale","Dundee East","Dundee West","Dunfermline and West Fife","East Dunbartonshire","East Kilbride, Strathaven and Lesmahagow","East Lothian","East Renfrewshire","Edinburgh East","Edinburgh North and Leith","Edinburgh South","Edinburgh South West","Edinburgh West","Na h-Eileanan an Iar","Falkirk","Glasgow Central","Glasgow East","Glasgow North","Glasgow North East","Glasgow North West","Glasgow South","Glasgow South West","Glenrothes","Gordon","Inverclyde","Inverness, Nairn, Badenoch and Strathspey","Kilmarnock and Loudoun","Kirkcaldy and Cowdenbeath","Lanark and Hamilton East","Linlithgow and East Falkirk","Livingston","Midlothian","Moray","Motherwell and Wishaw","North Ayrshire and Arran","North East Fife","Ochil and South Perthshire","Orkney and Shetland","Paisley and Renfrewshire North","Paisley and Renfrewshire South","Perth and North Perthshire","Ross, Skye and Lochaber","Rutherglen and Hamilton West","Stirling","West Aberdeenshire and Kincardine","West Dunbartonshire","Ynys Môn","Delyn","Alyn and Deeside","Wrexham","Llanelli","Gower","Swansea West","Swansea East","Aberavon","Cardiff Central","Cardiff North","Rhondda","Torfaen","Monmouth","Newport East","Newport West","Arfon","Aberconwy","Clwyd West","Vale of Clwyd","Dwyfor Meirionnydd","Clwyd South","Montgomeryshire","Ceredigion","Preseli Pembrokeshire","Carmarthen West and South Pembrokeshire","Carmarthen East and Dinefwr","Brecon and Radnorshire","Neath","Cynon Valley","Merthyr Tydfil and Rhymney","Blaenau Gwent","Bridgend","Ogmore","Pontypridd","Caerphilly","Islwyn","Vale of Glamorgan","Cardiff West","Cardiff South and Penarth"],[1700,1100,3600,1300,2500,1200,2000,1200,1900,2300,1900,1200,800,1500,2000,1800,1600,1900,1700,2500,2900,1900,1700,3700,1600,4100,1700,1900,1100,1100,1200,1000,1800,900,5300,800,1300,900,1200,1300,1700,1600,1000,1800,1200,900,1200,1700,1800,1500,1500,1100,1700,1800,1700,2000,1700,1500,900,2100,1900,2700,2600,3200,2300,1700,1300,1000,2500,1300,1500,1300,3700,1800,1800,2000,1800,1200,2700,1200,1700,1600,1600,2100,2000,1200,1200,2000,1700,1700,1300,1500,1500,2000,1700,1600,1000,1900,1800,2900,2300,2500,1500,2300,1600,1800,2800,1600,1700,20800,1900,1100,1000,1500,1700,1800,2000,1500,1800,1200,1100,2200,1200,1700,1900,1900,2100,1300,1200,1700,2000,1200,1300,1700,1900,1700,1800,1600,1500,1000,1100,1000,1500,1700,3400,1800,1700,700,1800,2100,2500,2500,1600,1900,1500,1800,1700,1800,1300,1900,1100,1500,2800,2100,2000,1500,1300,2500,1700,1900,1600,1900,1600,3800,1700,1800,1600,1600,1000,1200,1100,1000,1700,1000,1900,1600,1300,1500,1700,2300,2000,4000,1300,1800,1500,1100,2700,2900,1900,1600,2200,3200,3100,1200,1800,1600,1300,1800,1300,2600,1000,2700,2700,1900,2600,3100,1700,1500,1800,2300,7500,1700,2700,2200,700,2200,1700,2100,1300,2200,3100,1600,2200,1700,5000,900,1700,1900,3400,1500,2600,900,700,1800,1200,1000,1300,2600,4400,1200,1300,1000,1800,2300,1200,1600,1800,1100,1500,1500,1600,1800,1200,2800,600,1000,600,1600,1700,2000,900,1900,2100,2500,2000,1000,2000,4100,1200,1300,1300,2300,1700,2000,1100,1600,1800,2100,1900,1200,900,2500,2100,1800,2600,1200,1300,1600,1900,1900,2700,1600,1300,900,1300,1500,1200,1900,1800,2000,900,1900,1700,1200,2300,2000,1700,1900,1600,2000,2200,1500,1300,1000,1500,2000,1100,2000,1700,1600,2000,1200,1600,1100,1700,1700,700,1700,1200,1500,1600,1300,1700,1600,1800,1200,1100,1900,1800,700,1600,1800,2800,1500,1500,1700,1700,1600,1900,2600,1900,900,1500,2200,2100,2300,2800,1300,1800,2200,1800,1600,1600,1200,1000,1900,2200,2500,2200,2000,2600,1900,1800,1700,1100,1100,1100,1800,2200,2600,1600,900,1000,800,1200,1600,2000,1500,2500,1900,2100,1500,2300,1300,2500,1300,1300,2200,1500,1900,2000,1700,2300,1600,900,1500,1800,1900,1200,1800,1200,2700,1600,2900,1800,1200,1500,1800,1500,1800,2500,1700,1000,1200,1700,1500,1100,1300,1300,1800,1100,1500,1100,1100,800,1600,1300,2300,1200,1700,2200,2000,1500,2300,1800,1900,1700,2300,2000,1200,1900,2800,1200,2300,1800,1600,2000,2100,1900,1500,1800,1800,2000,2000,2500,2700,1500,2000,3900,1600,1000,900,1200,1900,900,2200,1100,1500,4800,2100,800,2500,1600,2300,1500,1700,2100,1900,1000,900,1100,2500,1900,1600,1900,2100,1900,2300,1700,1600,3400,2500,2700,1200,900,1900,2600,2200,2300,800,1100,1300,1300,1500,1200,1600,2100,1700,1600,1300,1800,1600,1600,1200,1200,2300,800,900,1500,1900,1200,1600,1800,2100,1700,1100,1300,1800,1300,1700,1600,1500,3500,1000,1700,1700,1200,2100,2000,1300,1000,1000,900,2000,1600,1000,1200,1200,1100,1300,1600,1200,1300,3600,1100,1500,1300,400,1300,4400,800,1000,700,800,800,700,900,2700,800,1900,1300,1100,1700,1300,1300,1100,1700,900,1100,1200,1500,1000,1200,1000,1900,1600,1100,1900,2700,900,900,1100,1200,1100,900,900,1100,900,700,1300,1200,600,900,1600,800,1100,900,1000,1200,1100,1200,900,1200,1300,1300,1600,1100,1300,800,600,700,600,1100,700,1100,900,900,1300,1200,1700],[1900,1300,4000,1600,2700,1300,2300,1500,2200,2700,2600,1400,1000,1500,2300,2300,1700,2200,2000,2900,3300,2100,2000,4500,1600,5000,1900,2100,1500,1300,1400,1200,2100,1200,6500,900,1500,1100,1500,1500,1900,2000,1100,1500,1400,1000,1500,3100,2000,1700,1800,1300,1800,2100,1700,2100,2000,1600,1200,2300,2100,3300,3300,4000,2800,1900,1500,1400,2800,1600,1800,1600,4200,2000,2100,2300,2100,1400,3100,1400,1900,1900,1900,2300,2300,1800,1400,2400,1800,1900,1400,1800,1700,2100,2000,1800,1300,2200,2300,3600,2600,2800,1600,2800,2100,2000,3000,1800,1900,23700,2300,1300,1100,1700,1900,2000,2300,1600,2300,1600,1400,3000,1600,1800,2300,2300,2600,1900,1400,2100,2300,1400,1600,1800,2100,2000,2000,1900,1800,1200,1200,1200,1600,2300,4200,2400,2200,800,1900,2900,2700,2800,1800,2100,1600,2100,2000,2100,1400,2000,1400,1800,3200,2500,2400,1600,1600,2900,1900,2100,1900,2700,1800,4400,1900,2100,1700,1800,1300,1400,1400,1200,1900,1200,2100,1800,1400,1700,2300,2800,2900,4700,1500,2000,1700,1400,3400,3700,2200,1900,2500,3400,3500,1400,1900,1800,1500,2200,1500,2400,1200,3300,3100,2100,2900,3700,1700,1800,2000,2700,8800,2100,3300,2600,800,2400,1900,2500,1600,2700,3800,1800,2400,2200,6200,1000,1800,2200,4100,1700,2900,1100,900,2000,1400,1300,1400,3200,1400,1500,1500,1200,2200,2600,1600,1700,2200,1500,1800,2000,2200,2200,1500,3000,800,1100,700,2000,1900,2100,1200,2400,2500,3000,2200,1300,2300,4700,1500,1700,1500,2600,1900,2400,1300,1700,2000,2600,2200,1400,1200,3200,2800,2000,3000,1400,1500,1700,2100,2200,3100,1900,1400,1200,1400,1600,1600,2000,1900,2300,1100,2200,1900,1400,2700,2300,1900,2100,1700,2200,2500,1700,1400,1200,1700,2400,1300,2400,1900,1700,2300,1500,2400,1300,2000,1800,900,2400,1600,1700,1800,1600,1900,1800,2100,1500,1300,2000,2000,800,1700,2100,3600,1700,1500,1800,1800,2100,2200,2900,1900,1100,1700,2500,2300,2500,3400,1700,2200,2500,2200,1800,1800,1400,1200,2300,2800,2800,2500,2200,3000,2200,2000,1800,1300,1300,1300,2000,2500,2900,1700,1100,1300,900,1400,1700,2200,1600,2600,2200,2800,1800,2600,1600,2700,1600,1500,2700,1600,2200,2400,2000,2800,1900,1000,1600,2000,2000,1500,2100,1400,3100,1800,3300,1900,1600,1700,2000,1700,2200,3200,1800,1200,1500,1800,1700,1300,1400,1600,2000,1500,1700,1300,1300,1000,1700,1600,2600,1800,1900,2500,2200,1600,2700,2200,1900,1800,2800,2200,1300,2200,3100,1400,2500,2000,2200,2100,2400,2300,1700,1900,2000,2500,2100,2700,3500,1600,2500,8900,1900,1100,1200,1500,2300,1100,2500,1400,1700,5200,2500,800,2800,1700,2600,2000,2000,2300,2200,1300,1200,1500,2600,2900,1800,2100,2300,2500,2500,1900,1800,3600,2500,3000,1300,1000,2100,2700,2600,2800,1000,1400,1500,1600,1500,1500,1900,2500,1900,1800,1700,1900,1800,1800,1400,1400,2500,900,1100,1600,2100,1300,1700,2000,2300,1800,1200,1400,1900,1500,1700,1700,1500,3300,1000,1700,1800,1400,2200,2100,1400,1200,1200,1000,2100,1700,1100,1200,1400,1300,1500,1600,1300,1800,3600,1300,1700,1600,500,1500,4600,1000,1200,800,900,1000,800,1000,2700,900,2100,1400,1300,1800,1500,1500,1300,1700,1000,1200,1400,1600,1100,1400,1100,2000,1700,1200,2000,2900,1000,1000,1200,1400,1300,1000,1000,1300,900,800,1500,1300,600,1000,1700,1000,1300,1000,1200,1300,1200,1300,1000,1400,1400,1500,1700,1300,1500,900,700,800,700,1600,900,1200,1100,900,1500,1400,2000],[1700,1300,2400,1400,2500,1300,2100,1300,2000,2400,2400,1400,900,1300,1900,1800,1700,1900,1900,2400,2800,1700,1700,4100,1600,4300,1900,2000,1300,1200,1200,1100,1900,1200,7900,800,1400,900,1400,1400,1800,2000,1000,1300,1300,1000,1400,1400,1700,1600,1500,1100,1800,1900,1500,1900,1700,1600,1100,2000,1900,3000,3000,3200,2400,1800,1400,1200,2400,1400,1400,1400,3800,1900,1800,3600,1900,1300,2600,1300,1700,2300,1600,2100,2100,1600,1400,2200,1700,1700,1400,1600,1400,2000,1800,1600,1200,1800,1900,3200,2100,2300,1600,2600,1700,1800,2400,1700,1800,27900,1800,1200,1100,1500,1700,1800,2300,1300,2000,1400,1200,1900,1500,1700,1900,2100,2200,1700,1300,1900,2100,1300,1300,1600,2000,1800,1800,1300,1700,1200,1200,1100,1500,1800,3500,2100,2000,800,1800,2600,2400,2400,1600,2000,1500,1900,1800,2000,1200,1800,1300,1600,2500,2300,2000,1500,1500,2400,1800,1800,1800,2400,1400,3700,1800,1900,1500,1600,1200,1300,1200,1100,1700,1100,2000,1700,1300,1500,2100,2500,2500,4500,1500,1700,1600,1300,2800,3000,2100,1700,2300,2500,2900,1200,1800,1800,1300,2100,1300,1900,1100,2900,2800,2000,3400,3200,1700,1500,1800,2300,8300,1800,2500,2300,800,2000,1700,2300,1500,2200,3200,1700,2300,1800,5400,900,1700,1900,3800,1600,2500,1200,900,2100,1200,1200,1300,3100,1000,1200,1200,1100,2000,2500,1500,1500,2000,1300,1400,1600,1900,1900,1400,2700,800,1000,600,2500,1800,2000,1100,5000,2100,2500,1900,1100,2100,4600,1300,1300,1500,2100,1700,4500,1100,1600,1900,2300,2000,1300,900,2600,2400,1700,2700,1300,1400,1600,1900,2100,2600,1800,1400,1000,1300,1500,1400,2000,1900,2100,1000,1900,1800,1300,2200,2100,1700,2000,1700,2100,2100,1500,1300,1100,1600,2200,1300,2000,1900,1700,2000,1300,2200,1200,1900,1600,900,2000,1300,1500,1600,1500,1700,1700,1900,1500,1200,2100,1900,800,1600,1900,3000,1500,1400,1700,1600,1700,1800,2400,1600,1000,1600,2100,2100,2400,2800,1600,2000,2000,1900,1700,1600,1300,1100,1900,2300,2400,2200,2100,2700,2000,1800,1800,1200,1200,1100,2000,2200,2500,1600,1200,1200,800,1400,1500,2100,1600,2500,2000,2500,1600,2300,1400,2400,1500,1400,2500,1500,2000,2100,1800,2400,1700,900,1500,1900,1600,1500,1800,1300,2700,1800,2800,1700,1300,1400,1600,1500,1900,2400,1800,1100,1300,1800,1500,1300,1300,1400,1700,1200,1400,1300,1300,1000,1600,1400,2500,1400,1700,2300,2100,1500,2200,1900,1600,1800,2400,2000,1300,1900,2800,1300,2500,1700,2000,2100,2200,1800,1700,1900,2000,2400,2000,2400,2600,1400,2100,3200,1800,1000,1100,1500,2100,1000,2300,1300,1500,2200,2100,900,2500,1500,2400,1500,1800,2100,2000,1200,1200,1400,2400,3600,1700,2000,2200,2200,2400,1700,1600,2700,2100,2600,1100,900,1900,2500,2200,2300,1000,1300,1400,1500,1300,1300,1600,2200,1700,1600,1400,1700,1600,1700,1400,1400,2400,1000,1000,1600,2200,1400,1700,2100,2400,1800,1200,1500,1900,1500,1800,1800,1200,2100,900,1500,1800,1300,1800,2100,1200,1100,1100,900,2100,1700,1000,1200,1400,1100,1400,1500,1200,1600,3100,1000,1500,1200,500,1400,4000,1000,1100,800,800,800,800,900,2100,800,1900,1300,1300,1600,1400,1300,1200,1600,1000,1100,1300,1500,1100,1300,1100,1900,1600,1200,1800,2200,1000,1000,1100,1300,1100,900,1000,1300,900,800,1500,1100,600,1000,1700,900,1200,900,1100,1200,1200,1300,1000,1400,1400,1400,1600,1200,1500,800,700,800,700,1200,800,1200,1000,800,1400,1200,1900]],"container":"<table>\n  <thead>\n    <tr>\n      <th rowspan=\"2\">Region<\/th>\n      <th rowspan=\"2\">Constituency<\/th>\n      <th colspan=\"3\" class=\"dt-center\">Employers benefiting<\/th>\n    <\/tr>\n    <tr>\n      <th>2014-15<\/th>\n      <th>2015-16<\/th>\n      <th>2016-17<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":15,"autoWidth":true,"columnDefs":[{"width":"24%","targets":0},{"width":"40%","targets":1},{"className":"dt-right","targets":[2,3,4]}],"dom":"rtpB","buttons":[{"extend":"csv"},{"extend":"excel","title":"HMRC Statistics","messageTop":"Employment Allowance take-up statistics: 2016-17","messageBottom":"https://www.gov.uk/government/collections/employment-allowance-take-up-statistics"},{"extend":"pdf","title":"HMRC Statistics","messageTop":"Employment Allowance take-up statistics: 2016-17","messageBottom":"https://www.gov.uk/government/collections/employment-allowance-take-up-statistics"}],"order":[],"orderClasses":false,"orderCellsTop":true,"lengthMenu":[10,15,25,50,100],"rowCallback":"function(row, data) {\nDTWidget.formatRound(this, row, data, 4, 0, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 3, 0, 3, ',', '.');\nDTWidget.formatRound(this, row, data, 2, 0, 3, ',', '.');\nvar value=data[-1]; $(row).css({'line-height':'5px'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="page-break">
+
+</div>
+<h1 id="constituency-map">5 Constituency Map</h1>
+<link rel="stylesheet" href="static/css/leaflet1.0.0.css" />
+<script src="jslibrary/leaflet1.0.0.js"></script>
+<script src="jslibrary/d3.v3.min.js"></script>
+<script src="jslibrary/topojson.v1.min.js"></script>
+<link rel="stylesheet" href="static/css/leaflet-search.min.css" />
+<script src="jslibrary/leaflet-search.min.js"></script>
+<style>
+  #mapid { height: 800px;
+           width: 800px;
+           background:whitesmoke; }
+   
+  .cssTooltip {font-size: 14px;
+               font-weight: bold; }
+  
+  .legend {line-height: 18px;
+           color: #000; }
+    
+  .info {padding: 6px 8px;
+         font: 14px/16px Helvetica, sans-serif;
+         font-weight: bold;
+         background: rgba(255,255,255,0.8);
+         box-shadow: 0 0 15px rgba(0,0,0,0.2);
+         border-radius: 5px; }  
+    
+  .legend i {width: 28px;
+             height: 14px;
+             float: left;
+             margin-right: 8px;
+             opacity: 0.7; }
+</style>
+<div id="mapid">
+
+</div>
+<script>
+ var schema = { "lgdTitle" : "Employers Benefiting from<br>Employment Allowance","lgdBin"   : [1,500,1000,1500,2000,2500,3000,3500,4000],"nFormat"  : ",.0","shape"    : "constituency","toolTipText" : "Employers Benefiting : "}; 
+ var map = new L.Map('mapid', { center: new L.LatLng(54.9, -4.0), zoomSnap: 0.5, zoom: 6, scrollWheelZoom: false });
+ 
+ map.zoomControl.setPosition('bottomright');
+ map.attributionControl
+    .setPrefix('')
+    .addAttribution('Contains National Statistics and Ordnance Survey data. © Crown copyright and database right 2018');
+ 
+ 
+ //Code to convert TopoJson to GeoJson
+ L.TopoJSON = L.GeoJSON.extend({  
+                  addData: function(jsonData) {    
+                           if (jsonData.type === "Topology") {
+                               for (key in jsonData.objects) {
+                                    geojson = topojson.feature(jsonData, jsonData.objects[key]);
+                                    L.GeoJSON.prototype.addData.call(this, geojson);
+    }}    
+                           else {
+                                    L.GeoJSON.prototype.addData.call(this, jsonData);
+ }}});
+
+ 
+ // Imports boundary data and uses it in a function that sets its style/properties
+ var shp1 = "shapefiles/Westminster_Constituencies_Dec16_Gen_Clip_UK.json"; 
+ var shp2 = 'shapefiles/Regions_Jan18_Gen_Clip_UK.json';
+ 
+ var seriesnames = ["2016-17","2015-16","2014-15"];
+
+ var controlLayers = L.control.layers([],[],{collapsed:false, position: 'topleft'}).addTo(map);
+ 
+  var searchLayer = new L.TopoJSON(null,{style: {opacity: 0 } });
+ 
+ // Automatically creates layers based on number of columns in the data
+ $.getJSON(shp1, function(topodata) { searchLayer.addData(topodata);
+                                      for (var i = 0; i < seriesnames.length; i++) {
+                                       var shpLayer = new L.TopoJSON(topodata);
+                                       controlLayers.addBaseLayer(shpLayer, seriesnames[i]); 
+                                       shpLayer.eachLayer(handleLayer1, col_for_stat=seriesnames[i]);
+                                       if (i == 0) {shpLayer.addTo(map);} }
+                                    });
+
+
+ $.getJSON(shp2, function(topodata) { var rgnLayer = new L.TopoJSON(topodata, {interactive: false}).addTo(map);
+                                      // controlLayers.addOverlay(rgnLayer, 'Regions'); 
+                                      rgnLayer.eachLayer(handleLayer2);
+                                      map.on("baselayerchange", function (event) {  rgnLayer.bringToFront(); });
+                                    });
+ 
+ 
+ // Creates ONS code lookup table
+ var mydata = [{"PCON16CD":"E14000530","Region":"South East","PCON16NM":"Aldershot","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000531","Region":"West Midlands","PCON16NM":"Aldridge-Brownhills","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000532","Region":"North West","PCON16NM":"Altrincham and Sale West","2016-17":2400,"2015-16":4000,"2014-15":3600},{"PCON16CD":"E14000533","Region":"East Midlands","PCON16NM":"Amber Valley","2016-17":1400,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000534","Region":"South East","PCON16NM":"Arundel and South Downs","2016-17":2500,"2015-16":2700,"2014-15":2500},{"PCON16CD":"E14000535","Region":"East Midlands","PCON16NM":"Ashfield","2016-17":1300,"2015-16":1300,"2014-15":1200},{"PCON16CD":"E14000536","Region":"South East","PCON16NM":"Ashford","2016-17":2100,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000537","Region":"North West","PCON16NM":"Ashton-under-Lyne","2016-17":1300,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000538","Region":"South East","PCON16NM":"Aylesbury","2016-17":2000,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000539","Region":"South East","PCON16NM":"Banbury","2016-17":2400,"2015-16":2700,"2014-15":2300},{"PCON16CD":"E14000540","Region":"London","PCON16NM":"Barking","2016-17":2400,"2015-16":2600,"2014-15":1900},{"PCON16CD":"E14000541","Region":"Yorkshire and The Humber","PCON16NM":"Barnsley Central","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000542","Region":"Yorkshire and The Humber","PCON16NM":"Barnsley East","2016-17":900,"2015-16":1000,"2014-15":800},{"PCON16CD":"E14000543","Region":"North West","PCON16NM":"Barrow and Furness","2016-17":1300,"2015-16":1500,"2014-15":1500},{"PCON16CD":"E14000544","Region":"East of England","PCON16NM":"Basildon and Billericay","2016-17":1900,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000545","Region":"South East","PCON16NM":"Basingstoke","2016-17":1800,"2015-16":2300,"2014-15":1800},{"PCON16CD":"E14000546","Region":"East Midlands","PCON16NM":"Bassetlaw","2016-17":1700,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000547","Region":"South West","PCON16NM":"Bath","2016-17":1900,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000548","Region":"Yorkshire and The Humber","PCON16NM":"Batley and Spen","2016-17":1900,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000549","Region":"London","PCON16NM":"Battersea","2016-17":2400,"2015-16":2900,"2014-15":2500},{"PCON16CD":"E14000550","Region":"South East","PCON16NM":"Beaconsfield","2016-17":2800,"2015-16":3300,"2014-15":2900},{"PCON16CD":"E14000551","Region":"London","PCON16NM":"Beckenham","2016-17":1700,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000552","Region":"East of England","PCON16NM":"Bedford","2016-17":1700,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000553","Region":"London","PCON16NM":"Bermondsey and Old Southwark","2016-17":4100,"2015-16":4500,"2014-15":3700},{"PCON16CD":"E14000554","Region":"North East","PCON16NM":"Berwick-upon-Tweed","2016-17":1600,"2015-16":1600,"2014-15":1600},{"PCON16CD":"E14000555","Region":"London","PCON16NM":"Bethnal Green and Bow","2016-17":4300,"2015-16":5000,"2014-15":4100},{"PCON16CD":"E14000556","Region":"Yorkshire and The Humber","PCON16NM":"Beverley and Holderness","2016-17":1900,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000557","Region":"South East","PCON16NM":"Bexhill and Battle","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000558","Region":"London","PCON16NM":"Bexleyheath and Crayford","2016-17":1300,"2015-16":1500,"2014-15":1100},{"PCON16CD":"E14000559","Region":"North West","PCON16NM":"Birkenhead","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000560","Region":"West Midlands","PCON16NM":"Birmingham, Edgbaston","2016-17":1200,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000561","Region":"West Midlands","PCON16NM":"Birmingham, Erdington","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000562","Region":"West Midlands","PCON16NM":"Birmingham, Hall Green","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000563","Region":"West Midlands","PCON16NM":"Birmingham, Hodge Hill","2016-17":1200,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14000564","Region":"West Midlands","PCON16NM":"Birmingham, Ladywood","2016-17":7900,"2015-16":6500,"2014-15":5300},{"PCON16CD":"E14000565","Region":"West Midlands","PCON16NM":"Birmingham, Northfield","2016-17":800,"2015-16":900,"2014-15":800},{"PCON16CD":"E14000566","Region":"West Midlands","PCON16NM":"Birmingham, Perry Barr","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000567","Region":"West Midlands","PCON16NM":"Birmingham, Selly Oak","2016-17":900,"2015-16":1100,"2014-15":900},{"PCON16CD":"E14000568","Region":"West Midlands","PCON16NM":"Birmingham, Yardley","2016-17":1400,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000569","Region":"North East","PCON16NM":"Bishop Auckland","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000570","Region":"North West","PCON16NM":"Blackburn","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000571","Region":"North West","PCON16NM":"Blackley and Broughton","2016-17":2000,"2015-16":2000,"2014-15":1600},{"PCON16CD":"E14000572","Region":"North West","PCON16NM":"Blackpool North and Cleveleys","2016-17":1000,"2015-16":1100,"2014-15":1000},{"PCON16CD":"E14000573","Region":"North West","PCON16NM":"Blackpool South","2016-17":1300,"2015-16":1500,"2014-15":1800},{"PCON16CD":"E14000574","Region":"North East","PCON16NM":"Blaydon","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000575","Region":"North East","PCON16NM":"Blyth Valley","2016-17":1000,"2015-16":1000,"2014-15":900},{"PCON16CD":"E14000576","Region":"South East","PCON16NM":"Bognor Regis and Littlehampton","2016-17":1400,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000577","Region":"East Midlands","PCON16NM":"Bolsover","2016-17":1400,"2015-16":3100,"2014-15":1700},{"PCON16CD":"E14000578","Region":"North West","PCON16NM":"Bolton North East","2016-17":1700,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000579","Region":"North West","PCON16NM":"Bolton South East","2016-17":1600,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000580","Region":"North West","PCON16NM":"Bolton West","2016-17":1500,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000581","Region":"North West","PCON16NM":"Bootle","2016-17":1100,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000582","Region":"East Midlands","PCON16NM":"Boston and Skegness","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000583","Region":"East Midlands","PCON16NM":"Bosworth","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000584","Region":"South West","PCON16NM":"Bournemouth East","2016-17":1500,"2015-16":1700,"2014-15":1700},{"PCON16CD":"E14000585","Region":"South West","PCON16NM":"Bournemouth West","2016-17":1900,"2015-16":2100,"2014-15":2000},{"PCON16CD":"E14000586","Region":"South East","PCON16NM":"Bracknell","2016-17":1700,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000587","Region":"Yorkshire and The Humber","PCON16NM":"Bradford East","2016-17":1600,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000588","Region":"Yorkshire and The Humber","PCON16NM":"Bradford South","2016-17":1100,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14000589","Region":"Yorkshire and The Humber","PCON16NM":"Bradford West","2016-17":2000,"2015-16":2300,"2014-15":2100},{"PCON16CD":"E14000590","Region":"East of England","PCON16NM":"Braintree","2016-17":1900,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000591","Region":"London","PCON16NM":"Brent Central","2016-17":3000,"2015-16":3300,"2014-15":2700},{"PCON16CD":"E14000592","Region":"London","PCON16NM":"Brent North","2016-17":3000,"2015-16":3300,"2014-15":2600},{"PCON16CD":"E14000593","Region":"London","PCON16NM":"Brentford and Isleworth","2016-17":3200,"2015-16":4000,"2014-15":3200},{"PCON16CD":"E14000594","Region":"East of England","PCON16NM":"Brentwood and Ongar","2016-17":2400,"2015-16":2800,"2014-15":2300},{"PCON16CD":"E14000595","Region":"South West","PCON16NM":"Bridgwater and West Somerset","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000596","Region":"Yorkshire and The Humber","PCON16NM":"Brigg and Goole","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000597","Region":"South East","PCON16NM":"Brighton, Kemptown","2016-17":1200,"2015-16":1400,"2014-15":1000},{"PCON16CD":"E14000598","Region":"South East","PCON16NM":"Brighton, Pavilion","2016-17":2400,"2015-16":2800,"2014-15":2500},{"PCON16CD":"E14000599","Region":"South West","PCON16NM":"Bristol East","2016-17":1400,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000600","Region":"South West","PCON16NM":"Bristol North West","2016-17":1400,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000601","Region":"South West","PCON16NM":"Bristol South","2016-17":1400,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000602","Region":"South West","PCON16NM":"Bristol West","2016-17":3800,"2015-16":4200,"2014-15":3700},{"PCON16CD":"E14000603","Region":"East of England","PCON16NM":"Broadland","2016-17":1900,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000604","Region":"London","PCON16NM":"Bromley and Chislehurst","2016-17":1800,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000605","Region":"West Midlands","PCON16NM":"Bromsgrove","2016-17":3600,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000606","Region":"East of England","PCON16NM":"Broxbourne","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000607","Region":"East Midlands","PCON16NM":"Broxtowe","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000608","Region":"South East","PCON16NM":"Buckingham","2016-17":2600,"2015-16":3100,"2014-15":2700},{"PCON16CD":"E14000609","Region":"North West","PCON16NM":"Burnley","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000610","Region":"West Midlands","PCON16NM":"Burton","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000611","Region":"North West","PCON16NM":"Bury North","2016-17":2300,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000612","Region":"North West","PCON16NM":"Bury South","2016-17":1600,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000613","Region":"East of England","PCON16NM":"Bury St Edmunds","2016-17":2100,"2015-16":2300,"2014-15":2100},{"PCON16CD":"E14000614","Region":"Yorkshire and The Humber","PCON16NM":"Calder Valley","2016-17":2100,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000615","Region":"London","PCON16NM":"Camberwell and Peckham","2016-17":1600,"2015-16":1800,"2014-15":1200},{"PCON16CD":"E14000616","Region":"South West","PCON16NM":"Camborne and Redruth","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000617","Region":"East of England","PCON16NM":"Cambridge","2016-17":2200,"2015-16":2400,"2014-15":2000},{"PCON16CD":"E14000618","Region":"West Midlands","PCON16NM":"Cannock Chase","2016-17":1700,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000619","Region":"South East","PCON16NM":"Canterbury","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000620","Region":"North West","PCON16NM":"Carlisle","2016-17":1400,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000621","Region":"London","PCON16NM":"Carshalton and Wallington","2016-17":1600,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000622","Region":"East of England","PCON16NM":"Castle Point","2016-17":1400,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000623","Region":"South West","PCON16NM":"Central Devon","2016-17":2000,"2015-16":2100,"2014-15":2000},{"PCON16CD":"E14000624","Region":"East of England","PCON16NM":"Central Suffolk and North Ipswich","2016-17":1800,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000625","Region":"East Midlands","PCON16NM":"Charnwood","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000626","Region":"South East","PCON16NM":"Chatham and Aylesford","2016-17":1200,"2015-16":1300,"2014-15":1000},{"PCON16CD":"E14000627","Region":"North West","PCON16NM":"Cheadle","2016-17":1800,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000628","Region":"East of England","PCON16NM":"Chelmsford","2016-17":1900,"2015-16":2300,"2014-15":1800},{"PCON16CD":"E14000629","Region":"London","PCON16NM":"Chelsea and Fulham","2016-17":3200,"2015-16":3600,"2014-15":2900},{"PCON16CD":"E14000630","Region":"South West","PCON16NM":"Cheltenham","2016-17":2100,"2015-16":2600,"2014-15":2300},{"PCON16CD":"E14000631","Region":"South East","PCON16NM":"Chesham and Amersham","2016-17":2300,"2015-16":2800,"2014-15":2500},{"PCON16CD":"E14000632","Region":"East Midlands","PCON16NM":"Chesterfield","2016-17":1600,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000633","Region":"South East","PCON16NM":"Chichester","2016-17":2600,"2015-16":2800,"2014-15":2300},{"PCON16CD":"E14000634","Region":"London","PCON16NM":"Chingford and Woodford Green","2016-17":1700,"2015-16":2100,"2014-15":1600},{"PCON16CD":"E14000635","Region":"South West","PCON16NM":"Chippenham","2016-17":1800,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000636","Region":"London","PCON16NM":"Chipping Barnet","2016-17":2400,"2015-16":3000,"2014-15":2800},{"PCON16CD":"E14000637","Region":"North West","PCON16NM":"Chorley","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000638","Region":"South West","PCON16NM":"Christchurch","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000639","Region":"London","PCON16NM":"Cities of London and Westminster","2016-17":27900,"2015-16":23700,"2014-15":20800},{"PCON16CD":"E14000640","Region":"North West","PCON16NM":"City of Chester","2016-17":1800,"2015-16":2300,"2014-15":1900},{"PCON16CD":"E14000641","Region":"North East","PCON16NM":"City of Durham","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000642","Region":"East of England","PCON16NM":"Clacton","2016-17":1100,"2015-16":1100,"2014-15":1000},{"PCON16CD":"E14000643","Region":"Yorkshire and The Humber","PCON16NM":"Cleethorpes","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000644","Region":"East of England","PCON16NM":"Colchester","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000645","Region":"Yorkshire and The Humber","PCON16NM":"Colne Valley","2016-17":1800,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000646","Region":"North West","PCON16NM":"Congleton","2016-17":2300,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000647","Region":"North West","PCON16NM":"Copeland","2016-17":1300,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000648","Region":"East Midlands","PCON16NM":"Corby","2016-17":2000,"2015-16":2300,"2014-15":1800},{"PCON16CD":"E14000649","Region":"West Midlands","PCON16NM":"Coventry North East","2016-17":1400,"2015-16":1600,"2014-15":1200},{"PCON16CD":"E14000650","Region":"West Midlands","PCON16NM":"Coventry North West","2016-17":1200,"2015-16":1400,"2014-15":1100},{"PCON16CD":"E14000651","Region":"West Midlands","PCON16NM":"Coventry South","2016-17":1900,"2015-16":3000,"2014-15":2200},{"PCON16CD":"E14000652","Region":"South East","PCON16NM":"Crawley","2016-17":1500,"2015-16":1600,"2014-15":1200},{"PCON16CD":"E14000653","Region":"North West","PCON16NM":"Crewe and Nantwich","2016-17":1700,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000654","Region":"London","PCON16NM":"Croydon Central","2016-17":1900,"2015-16":2300,"2014-15":1900},{"PCON16CD":"E14000655","Region":"London","PCON16NM":"Croydon North","2016-17":2100,"2015-16":2300,"2014-15":1900},{"PCON16CD":"E14000656","Region":"London","PCON16NM":"Croydon South","2016-17":2200,"2015-16":2600,"2014-15":2100},{"PCON16CD":"E14000657","Region":"London","PCON16NM":"Dagenham and Rainham","2016-17":1700,"2015-16":1900,"2014-15":1300},{"PCON16CD":"E14000658","Region":"North East","PCON16NM":"Darlington","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000659","Region":"South East","PCON16NM":"Dartford","2016-17":1900,"2015-16":2100,"2014-15":1700},{"PCON16CD":"E14000660","Region":"East Midlands","PCON16NM":"Daventry","2016-17":2100,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000661","Region":"North West","PCON16NM":"Denton and Reddish","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000662","Region":"East Midlands","PCON16NM":"Derby North","2016-17":1300,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000663","Region":"East Midlands","PCON16NM":"Derby South","2016-17":1600,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000664","Region":"East Midlands","PCON16NM":"Derbyshire Dales","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000665","Region":"South West","PCON16NM":"Devizes","2016-17":1800,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000666","Region":"Yorkshire and The Humber","PCON16NM":"Dewsbury","2016-17":1800,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000667","Region":"Yorkshire and The Humber","PCON16NM":"Don Valley","2016-17":1300,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000668","Region":"Yorkshire and The Humber","PCON16NM":"Doncaster Central","2016-17":1700,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000669","Region":"Yorkshire and The Humber","PCON16NM":"Doncaster North","2016-17":1200,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000670","Region":"South East","PCON16NM":"Dover","2016-17":1200,"2015-16":1200,"2014-15":1100},{"PCON16CD":"E14000671","Region":"West Midlands","PCON16NM":"Dudley North","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000672","Region":"West Midlands","PCON16NM":"Dudley South","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000673","Region":"London","PCON16NM":"Dulwich and West Norwood","2016-17":1800,"2015-16":2300,"2014-15":1700},{"PCON16CD":"E14000674","Region":"London","PCON16NM":"Ealing Central and Acton","2016-17":3500,"2015-16":4200,"2014-15":3400},{"PCON16CD":"E14000675","Region":"London","PCON16NM":"Ealing North","2016-17":2100,"2015-16":2400,"2014-15":1800},{"PCON16CD":"E14000676","Region":"London","PCON16NM":"Ealing, Southall","2016-17":2000,"2015-16":2200,"2014-15":1700},{"PCON16CD":"E14000677","Region":"North East","PCON16NM":"Easington","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"E14000678","Region":"South West","PCON16NM":"East Devon","2016-17":1800,"2015-16":1900,"2014-15":1800},{"PCON16CD":"E14000679","Region":"London","PCON16NM":"East Ham","2016-17":2600,"2015-16":2900,"2014-15":2100},{"PCON16CD":"E14000680","Region":"South East","PCON16NM":"East Hampshire","2016-17":2400,"2015-16":2700,"2014-15":2500},{"PCON16CD":"E14000681","Region":"South East","PCON16NM":"East Surrey","2016-17":2400,"2015-16":2800,"2014-15":2500},{"PCON16CD":"E14000682","Region":"South East","PCON16NM":"East Worthing and Shoreham","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000683","Region":"Yorkshire and The Humber","PCON16NM":"East Yorkshire","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000684","Region":"South East","PCON16NM":"Eastbourne","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000685","Region":"South East","PCON16NM":"Eastleigh","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000686","Region":"North West","PCON16NM":"Eddisbury","2016-17":1800,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000687","Region":"London","PCON16NM":"Edmonton","2016-17":2000,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000688","Region":"North West","PCON16NM":"Ellesmere Port and Neston","2016-17":1200,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000689","Region":"Yorkshire and The Humber","PCON16NM":"Elmet and Rothwell","2016-17":1800,"2015-16":2000,"2014-15":1900},{"PCON16CD":"E14000690","Region":"London","PCON16NM":"Eltham","2016-17":1300,"2015-16":1400,"2014-15":1100},{"PCON16CD":"E14000691","Region":"London","PCON16NM":"Enfield North","2016-17":1600,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000692","Region":"London","PCON16NM":"Enfield, Southgate","2016-17":2500,"2015-16":3200,"2014-15":2800},{"PCON16CD":"E14000693","Region":"East of England","PCON16NM":"Epping Forest","2016-17":2300,"2015-16":2500,"2014-15":2100},{"PCON16CD":"E14000694","Region":"South East","PCON16NM":"Epsom and Ewell","2016-17":2000,"2015-16":2400,"2014-15":2000},{"PCON16CD":"E14000695","Region":"East Midlands","PCON16NM":"Erewash","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000696","Region":"London","PCON16NM":"Erith and Thamesmead","2016-17":1500,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000697","Region":"South East","PCON16NM":"Esher and Walton","2016-17":2400,"2015-16":2900,"2014-15":2500},{"PCON16CD":"E14000698","Region":"South West","PCON16NM":"Exeter","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000699","Region":"South East","PCON16NM":"Fareham","2016-17":1800,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000700","Region":"South East","PCON16NM":"Faversham and Mid Kent","2016-17":1800,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000701","Region":"London","PCON16NM":"Feltham and Heston","2016-17":2400,"2015-16":2700,"2014-15":1900},{"PCON16CD":"E14000702","Region":"South West","PCON16NM":"Filton and Bradley Stoke","2016-17":1400,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000703","Region":"London","PCON16NM":"Finchley and Golders Green","2016-17":3700,"2015-16":4400,"2014-15":3800},{"PCON16CD":"E14000704","Region":"South East","PCON16NM":"Folkestone and Hythe","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000705","Region":"South West","PCON16NM":"Forest of Dean","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000706","Region":"North West","PCON16NM":"Fylde","2016-17":1500,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000707","Region":"East Midlands","PCON16NM":"Gainsborough","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000708","Region":"North West","PCON16NM":"Garston and Halewood","2016-17":1200,"2015-16":1300,"2014-15":1000},{"PCON16CD":"E14000709","Region":"North East","PCON16NM":"Gateshead","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000710","Region":"East Midlands","PCON16NM":"Gedling","2016-17":1200,"2015-16":1400,"2014-15":1100},{"PCON16CD":"E14000711","Region":"South East","PCON16NM":"Gillingham and Rainham","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000712","Region":"South West","PCON16NM":"Gloucester","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000713","Region":"South East","PCON16NM":"Gosport","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000714","Region":"East Midlands","PCON16NM":"Grantham and Stamford","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000715","Region":"South East","PCON16NM":"Gravesham","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000716","Region":"Yorkshire and The Humber","PCON16NM":"Great Grimsby","2016-17":1300,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000717","Region":"East of England","PCON16NM":"Great Yarmouth","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000718","Region":"London","PCON16NM":"Greenwich and Woolwich","2016-17":2100,"2015-16":2300,"2014-15":1700},{"PCON16CD":"E14000719","Region":"South East","PCON16NM":"Guildford","2016-17":2500,"2015-16":2800,"2014-15":2300},{"PCON16CD":"E14000720","Region":"London","PCON16NM":"Hackney North and Stoke Newington","2016-17":2500,"2015-16":2900,"2014-15":2000},{"PCON16CD":"E14000721","Region":"London","PCON16NM":"Hackney South and Shoreditch","2016-17":4500,"2015-16":4700,"2014-15":4000},{"PCON16CD":"E14000722","Region":"West Midlands","PCON16NM":"Halesowen and Rowley Regis","2016-17":1500,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000723","Region":"Yorkshire and The Humber","PCON16NM":"Halifax","2016-17":1700,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000724","Region":"Yorkshire and The Humber","PCON16NM":"Haltemprice and Howden","2016-17":1600,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000725","Region":"North West","PCON16NM":"Halton","2016-17":1300,"2015-16":1400,"2014-15":1100},{"PCON16CD":"E14000726","Region":"London","PCON16NM":"Hammersmith","2016-17":2800,"2015-16":3400,"2014-15":2700},{"PCON16CD":"E14000727","Region":"London","PCON16NM":"Hampstead and Kilburn","2016-17":3000,"2015-16":3700,"2014-15":2900},{"PCON16CD":"E14000728","Region":"East Midlands","PCON16NM":"Harborough","2016-17":2100,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000729","Region":"East of England","PCON16NM":"Harlow","2016-17":1700,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000730","Region":"Yorkshire and The Humber","PCON16NM":"Harrogate and Knaresborough","2016-17":2300,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000731","Region":"London","PCON16NM":"Harrow East","2016-17":2500,"2015-16":3400,"2014-15":3200},{"PCON16CD":"E14000732","Region":"London","PCON16NM":"Harrow West","2016-17":2900,"2015-16":3500,"2014-15":3100},{"PCON16CD":"E14000733","Region":"North East","PCON16NM":"Hartlepool","2016-17":1200,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000734","Region":"East of England","PCON16NM":"Harwich and North Essex","2016-17":1800,"2015-16":1900,"2014-15":1800},{"PCON16CD":"E14000735","Region":"South East","PCON16NM":"Hastings and Rye","2016-17":1800,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000736","Region":"South East","PCON16NM":"Havant","2016-17":1300,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000737","Region":"London","PCON16NM":"Hayes and Harlington","2016-17":2100,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000738","Region":"North West","PCON16NM":"Hazel Grove","2016-17":1300,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000739","Region":"East of England","PCON16NM":"Hemel Hempstead","2016-17":1900,"2015-16":2400,"2014-15":2600},{"PCON16CD":"E14000740","Region":"Yorkshire and The Humber","PCON16NM":"Hemsworth","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000741","Region":"London","PCON16NM":"Hendon","2016-17":2900,"2015-16":3300,"2014-15":2700},{"PCON16CD":"E14000742","Region":"South East","PCON16NM":"Henley","2016-17":2800,"2015-16":3100,"2014-15":2700},{"PCON16CD":"E14000743","Region":"West Midlands","PCON16NM":"Hereford and South Herefordshire","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000744","Region":"East of England","PCON16NM":"Hertford and Stortford","2016-17":3400,"2015-16":2900,"2014-15":2600},{"PCON16CD":"E14000745","Region":"East of England","PCON16NM":"Hertsmere","2016-17":3200,"2015-16":3700,"2014-15":3100},{"PCON16CD":"E14000746","Region":"North East","PCON16NM":"Hexham","2016-17":1700,"2015-16":1700,"2014-15":1700},{"PCON16CD":"E14000747","Region":"North West","PCON16NM":"Heywood and Middleton","2016-17":1500,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000748","Region":"East Midlands","PCON16NM":"High Peak","2016-17":1800,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000749","Region":"East of England","PCON16NM":"Hitchin and Harpenden","2016-17":2300,"2015-16":2700,"2014-15":2300},{"PCON16CD":"E14000750","Region":"London","PCON16NM":"Holborn and St Pancras","2016-17":8300,"2015-16":8800,"2014-15":7500},{"PCON16CD":"E14000751","Region":"London","PCON16NM":"Hornchurch and Upminster","2016-17":1800,"2015-16":2100,"2014-15":1700},{"PCON16CD":"E14000752","Region":"London","PCON16NM":"Hornsey and Wood Green","2016-17":2500,"2015-16":3300,"2014-15":2700},{"PCON16CD":"E14000753","Region":"South East","PCON16NM":"Horsham","2016-17":2300,"2015-16":2600,"2014-15":2200},{"PCON16CD":"E14000754","Region":"North East","PCON16NM":"Houghton and Sunderland South","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"E14000755","Region":"South East","PCON16NM":"Hove","2016-17":2000,"2015-16":2400,"2014-15":2200},{"PCON16CD":"E14000756","Region":"Yorkshire and The Humber","PCON16NM":"Huddersfield","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000757","Region":"East of England","PCON16NM":"Huntingdon","2016-17":2300,"2015-16":2500,"2014-15":2100},{"PCON16CD":"E14000758","Region":"North West","PCON16NM":"Hyndburn","2016-17":1500,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000759","Region":"London","PCON16NM":"Ilford North","2016-17":2200,"2015-16":2700,"2014-15":2200},{"PCON16CD":"E14000760","Region":"London","PCON16NM":"Ilford South","2016-17":3200,"2015-16":3800,"2014-15":3100},{"PCON16CD":"E14000761","Region":"East of England","PCON16NM":"Ipswich","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000762","Region":"South East","PCON16NM":"Isle of Wight","2016-17":2300,"2015-16":2400,"2014-15":2200},{"PCON16CD":"E14000763","Region":"London","PCON16NM":"Islington North","2016-17":1800,"2015-16":2200,"2014-15":1700},{"PCON16CD":"E14000764","Region":"London","PCON16NM":"Islington South and Finsbury","2016-17":5400,"2015-16":6200,"2014-15":5000},{"PCON16CD":"E14000765","Region":"North East","PCON16NM":"Jarrow","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"E14000766","Region":"Yorkshire and The Humber","PCON16NM":"Keighley","2016-17":1700,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000767","Region":"West Midlands","PCON16NM":"Kenilworth and Southam","2016-17":1900,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000768","Region":"London","PCON16NM":"Kensington","2016-17":3800,"2015-16":4100,"2014-15":3400},{"PCON16CD":"E14000769","Region":"East Midlands","PCON16NM":"Kettering","2016-17":1600,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000770","Region":"London","PCON16NM":"Kingston and Surbiton","2016-17":2500,"2015-16":2900,"2014-15":2600},{"PCON16CD":"E14000771","Region":"Yorkshire and The Humber","PCON16NM":"Kingston upon Hull East","2016-17":1200,"2015-16":1100,"2014-15":900},{"PCON16CD":"E14000772","Region":"Yorkshire and The Humber","PCON16NM":"Kingston upon Hull North","2016-17":900,"2015-16":900,"2014-15":700},{"PCON16CD":"E14000773","Region":"Yorkshire and The Humber","PCON16NM":"Kingston upon Hull West and Hessle","2016-17":2100,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000774","Region":"South West","PCON16NM":"Kingswood","2016-17":1200,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000775","Region":"North West","PCON16NM":"Knowsley","2016-17":1200,"2015-16":1300,"2014-15":1000},{"PCON16CD":"E14000776","Region":"North West","PCON16NM":"Lancaster and Fleetwood","2016-17":1300,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000777","Region":"Yorkshire and The Humber","PCON16NM":"Leeds Central","2016-17":3100,"2015-16":3200,"2014-15":2600},{"PCON16CD":"E14000778","Region":"Yorkshire and The Humber","PCON16NM":"Leeds East","2016-17":1000,"2015-16":1400,"2014-15":4400},{"PCON16CD":"E14000779","Region":"Yorkshire and The Humber","PCON16NM":"Leeds North East","2016-17":1200,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000780","Region":"Yorkshire and The Humber","PCON16NM":"Leeds North West","2016-17":1200,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000781","Region":"Yorkshire and The Humber","PCON16NM":"Leeds West","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000782","Region":"East Midlands","PCON16NM":"Leicester East","2016-17":2000,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000783","Region":"East Midlands","PCON16NM":"Leicester South","2016-17":2500,"2015-16":2600,"2014-15":2300},{"PCON16CD":"E14000784","Region":"East Midlands","PCON16NM":"Leicester West","2016-17":1500,"2015-16":1600,"2014-15":1200},{"PCON16CD":"E14000785","Region":"North West","PCON16NM":"Leigh","2016-17":1500,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000786","Region":"South East","PCON16NM":"Lewes","2016-17":2000,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000787","Region":"London","PCON16NM":"Lewisham East","2016-17":1300,"2015-16":1500,"2014-15":1100},{"PCON16CD":"E14000788","Region":"London","PCON16NM":"Lewisham West and Penge","2016-17":1400,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000789","Region":"London","PCON16NM":"Lewisham, Deptford","2016-17":1600,"2015-16":2000,"2014-15":1500},{"PCON16CD":"E14000790","Region":"London","PCON16NM":"Leyton and Wanstead","2016-17":1900,"2015-16":2200,"2014-15":1600},{"PCON16CD":"E14000791","Region":"West Midlands","PCON16NM":"Lichfield","2016-17":1900,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000792","Region":"East Midlands","PCON16NM":"Lincoln","2016-17":1400,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000793","Region":"North West","PCON16NM":"Liverpool, Riverside","2016-17":2700,"2015-16":3000,"2014-15":2800},{"PCON16CD":"E14000794","Region":"North West","PCON16NM":"Liverpool, Walton","2016-17":800,"2015-16":800,"2014-15":600},{"PCON16CD":"E14000795","Region":"North West","PCON16NM":"Liverpool, Wavertree","2016-17":1000,"2015-16":1100,"2014-15":1000},{"PCON16CD":"E14000796","Region":"North West","PCON16NM":"Liverpool, West Derby","2016-17":600,"2015-16":700,"2014-15":600},{"PCON16CD":"E14000797","Region":"East Midlands","PCON16NM":"Loughborough","2016-17":2500,"2015-16":2000,"2014-15":1600},{"PCON16CD":"E14000798","Region":"East Midlands","PCON16NM":"Louth and Horncastle","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000799","Region":"West Midlands","PCON16NM":"Ludlow","2016-17":2000,"2015-16":2100,"2014-15":2000},{"PCON16CD":"E14000800","Region":"East of England","PCON16NM":"Luton North","2016-17":1100,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14000801","Region":"East of England","PCON16NM":"Luton South","2016-17":5000,"2015-16":2400,"2014-15":1900},{"PCON16CD":"E14000802","Region":"North West","PCON16NM":"Macclesfield","2016-17":2100,"2015-16":2500,"2014-15":2100},{"PCON16CD":"E14000803","Region":"South East","PCON16NM":"Maidenhead","2016-17":2500,"2015-16":3000,"2014-15":2500},{"PCON16CD":"E14000804","Region":"South East","PCON16NM":"Maidstone and The Weald","2016-17":1900,"2015-16":2200,"2014-15":2000},{"PCON16CD":"E14000805","Region":"North West","PCON16NM":"Makerfield","2016-17":1100,"2015-16":1300,"2014-15":1000},{"PCON16CD":"E14000806","Region":"East of England","PCON16NM":"Maldon","2016-17":2100,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000807","Region":"North West","PCON16NM":"Manchester Central","2016-17":4600,"2015-16":4700,"2014-15":4100},{"PCON16CD":"E14000808","Region":"North West","PCON16NM":"Manchester, Gorton","2016-17":1300,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000809","Region":"North West","PCON16NM":"Manchester, Withington","2016-17":1300,"2015-16":1700,"2014-15":1300},{"PCON16CD":"E14000810","Region":"East Midlands","PCON16NM":"Mansfield","2016-17":1500,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000811","Region":"South East","PCON16NM":"Meon Valley","2016-17":2100,"2015-16":2600,"2014-15":2300},{"PCON16CD":"E14000812","Region":"West Midlands","PCON16NM":"Meriden","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000813","Region":"East of England","PCON16NM":"Mid Bedfordshire","2016-17":4500,"2015-16":2400,"2014-15":2000},{"PCON16CD":"E14000814","Region":"East Midlands","PCON16NM":"Mid Derbyshire","2016-17":1100,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000815","Region":"South West","PCON16NM":"Mid Dorset and North Poole","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000816","Region":"East of England","PCON16NM":"Mid Norfolk","2016-17":1900,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000817","Region":"South East","PCON16NM":"Mid Sussex","2016-17":2300,"2015-16":2600,"2014-15":2100},{"PCON16CD":"E14000818","Region":"West Midlands","PCON16NM":"Mid Worcestershire","2016-17":2000,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000819","Region":"North East","PCON16NM":"Middlesbrough","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000820","Region":"North East","PCON16NM":"Middlesbrough South and East Cleveland","2016-17":900,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14000821","Region":"South East","PCON16NM":"Milton Keynes North","2016-17":2600,"2015-16":3200,"2014-15":2500},{"PCON16CD":"E14000822","Region":"South East","PCON16NM":"Milton Keynes South","2016-17":2400,"2015-16":2800,"2014-15":2100},{"PCON16CD":"E14000823","Region":"London","PCON16NM":"Mitcham and Morden","2016-17":1700,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000824","Region":"South East","PCON16NM":"Mole Valley","2016-17":2700,"2015-16":3000,"2014-15":2600},{"PCON16CD":"E14000825","Region":"North West","PCON16NM":"Morecambe and Lunesdale","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000826","Region":"Yorkshire and The Humber","PCON16NM":"Morley and Outwood","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000827","Region":"South East","PCON16NM":"New Forest East","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000828","Region":"South East","PCON16NM":"New Forest West","2016-17":1900,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000829","Region":"East Midlands","PCON16NM":"Newark","2016-17":2100,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000830","Region":"South East","PCON16NM":"Newbury","2016-17":2600,"2015-16":3100,"2014-15":2700},{"PCON16CD":"E14000831","Region":"North East","PCON16NM":"Newcastle upon Tyne Central","2016-17":1800,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000832","Region":"North East","PCON16NM":"Newcastle upon Tyne East","2016-17":1400,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000833","Region":"North East","PCON16NM":"Newcastle upon Tyne North","2016-17":1000,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14000834","Region":"West Midlands","PCON16NM":"Newcastle-under-Lyme","2016-17":1300,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000835","Region":"South West","PCON16NM":"Newton Abbot","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000836","Region":"Yorkshire and The Humber","PCON16NM":"Normanton, Pontefract and Castleford","2016-17":1400,"2015-16":1600,"2014-15":1200},{"PCON16CD":"E14000837","Region":"South West","PCON16NM":"North Cornwall","2016-17":2000,"2015-16":2000,"2014-15":1900},{"PCON16CD":"E14000838","Region":"South West","PCON16NM":"North Devon","2016-17":1900,"2015-16":1900,"2014-15":1800},{"PCON16CD":"E14000839","Region":"South West","PCON16NM":"North Dorset","2016-17":2100,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000840","Region":"North East","PCON16NM":"North Durham","2016-17":1000,"2015-16":1100,"2014-15":900},{"PCON16CD":"E14000841","Region":"East of England","PCON16NM":"North East Bedfordshire","2016-17":1900,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000842","Region":"East of England","PCON16NM":"North East Cambridgeshire","2016-17":1800,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000843","Region":"East Midlands","PCON16NM":"North East Derbyshire","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000844","Region":"South East","PCON16NM":"North East Hampshire","2016-17":2200,"2015-16":2700,"2014-15":2300},{"PCON16CD":"E14000845","Region":"East of England","PCON16NM":"North East Hertfordshire","2016-17":2100,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000846","Region":"South West","PCON16NM":"North East Somerset","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000847","Region":"West Midlands","PCON16NM":"North Herefordshire","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14000848","Region":"East of England","PCON16NM":"North Norfolk","2016-17":1700,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000849","Region":"West Midlands","PCON16NM":"North Shropshire","2016-17":2100,"2015-16":2200,"2014-15":2000},{"PCON16CD":"E14000850","Region":"South West","PCON16NM":"North Somerset","2016-17":2100,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000851","Region":"South West","PCON16NM":"North Swindon","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000852","Region":"South East","PCON16NM":"North Thanet","2016-17":1300,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000853","Region":"North East","PCON16NM":"North Tyneside","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000854","Region":"West Midlands","PCON16NM":"North Warwickshire","2016-17":1600,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000855","Region":"East of England","PCON16NM":"North West Cambridgeshire","2016-17":2200,"2015-16":2400,"2014-15":2000},{"PCON16CD":"E14000856","Region":"North East","PCON16NM":"North West Durham","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000857","Region":"South East","PCON16NM":"North West Hampshire","2016-17":2000,"2015-16":2400,"2014-15":2000},{"PCON16CD":"E14000858","Region":"East Midlands","PCON16NM":"North West Leicestershire","2016-17":1900,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000859","Region":"East of England","PCON16NM":"North West Norfolk","2016-17":1700,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000860","Region":"South West","PCON16NM":"North Wiltshire","2016-17":2000,"2015-16":2300,"2014-15":2000},{"PCON16CD":"E14000861","Region":"East Midlands","PCON16NM":"Northampton North","2016-17":1300,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000862","Region":"East Midlands","PCON16NM":"Northampton South","2016-17":2200,"2015-16":2400,"2014-15":1600},{"PCON16CD":"E14000863","Region":"East of England","PCON16NM":"Norwich North","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000864","Region":"East of England","PCON16NM":"Norwich South","2016-17":1900,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000865","Region":"East Midlands","PCON16NM":"Nottingham East","2016-17":1600,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000866","Region":"East Midlands","PCON16NM":"Nottingham North","2016-17":900,"2015-16":900,"2014-15":700},{"PCON16CD":"E14000867","Region":"East Midlands","PCON16NM":"Nottingham South","2016-17":2000,"2015-16":2400,"2014-15":1700},{"PCON16CD":"E14000868","Region":"West Midlands","PCON16NM":"Nuneaton","2016-17":1300,"2015-16":1600,"2014-15":1200},{"PCON16CD":"E14000869","Region":"London","PCON16NM":"Old Bexley and Sidcup","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000870","Region":"North West","PCON16NM":"Oldham East and Saddleworth","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000871","Region":"North West","PCON16NM":"Oldham West and Royton","2016-17":1500,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000872","Region":"London","PCON16NM":"Orpington","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000873","Region":"South East","PCON16NM":"Oxford East","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000874","Region":"South East","PCON16NM":"Oxford West and Abingdon","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000875","Region":"North West","PCON16NM":"Pendle","2016-17":1500,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000876","Region":"Yorkshire and The Humber","PCON16NM":"Penistone and Stocksbridge","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000877","Region":"North West","PCON16NM":"Penrith and The Border","2016-17":2100,"2015-16":2000,"2014-15":1900},{"PCON16CD":"E14000878","Region":"East of England","PCON16NM":"Peterborough","2016-17":1900,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000879","Region":"South West","PCON16NM":"Plymouth, Moor View","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"E14000880","Region":"South West","PCON16NM":"Plymouth, Sutton and Devonport","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000881","Region":"South West","PCON16NM":"Poole","2016-17":1900,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000882","Region":"London","PCON16NM":"Poplar and Limehouse","2016-17":3000,"2015-16":3600,"2014-15":2800},{"PCON16CD":"E14000883","Region":"South East","PCON16NM":"Portsmouth North ","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000884","Region":"South East","PCON16NM":"Portsmouth South","2016-17":1400,"2015-16":1500,"2014-15":1500},{"PCON16CD":"E14000885","Region":"North West","PCON16NM":"Preston","2016-17":1700,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000886","Region":"Yorkshire and The Humber","PCON16NM":"Pudsey","2016-17":1600,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000887","Region":"London","PCON16NM":"Putney","2016-17":1700,"2015-16":2100,"2014-15":1600},{"PCON16CD":"E14000888","Region":"East of England","PCON16NM":"Rayleigh and Wickford","2016-17":1800,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000889","Region":"South East","PCON16NM":"Reading East","2016-17":2400,"2015-16":2900,"2014-15":2600},{"PCON16CD":"E14000890","Region":"South East","PCON16NM":"Reading West","2016-17":1600,"2015-16":1900,"2014-15":1900},{"PCON16CD":"E14000891","Region":"North East","PCON16NM":"Redcar","2016-17":1000,"2015-16":1100,"2014-15":900},{"PCON16CD":"E14000892","Region":"West Midlands","PCON16NM":"Redditch","2016-17":1600,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000893","Region":"South East","PCON16NM":"Reigate","2016-17":2100,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000894","Region":"North West","PCON16NM":"Ribble Valley","2016-17":2100,"2015-16":2300,"2014-15":2100},{"PCON16CD":"E14000895","Region":"Yorkshire and The Humber","PCON16NM":"Richmond (Yorks)","2016-17":2400,"2015-16":2500,"2014-15":2300},{"PCON16CD":"E14000896","Region":"London","PCON16NM":"Richmond Park","2016-17":2800,"2015-16":3400,"2014-15":2800},{"PCON16CD":"E14000897","Region":"North West","PCON16NM":"Rochdale","2016-17":1600,"2015-16":1700,"2014-15":1300},{"PCON16CD":"E14000898","Region":"South East","PCON16NM":"Rochester and Strood","2016-17":2000,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000899","Region":"East of England","PCON16NM":"Rochford and Southend East","2016-17":2000,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000900","Region":"London","PCON16NM":"Romford","2016-17":1900,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000901","Region":"South East","PCON16NM":"Romsey and Southampton North","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000902","Region":"North West","PCON16NM":"Rossendale and Darwen","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000903","Region":"Yorkshire and The Humber","PCON16NM":"Rother Valley","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000904","Region":"Yorkshire and The Humber","PCON16NM":"Rotherham","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000905","Region":"West Midlands","PCON16NM":"Rugby","2016-17":1900,"2015-16":2300,"2014-15":1900},{"PCON16CD":"E14000906","Region":"London","PCON16NM":"Ruislip, Northwood and Pinner","2016-17":2300,"2015-16":2800,"2014-15":2200},{"PCON16CD":"E14000907","Region":"South East","PCON16NM":"Runnymede and Weybridge","2016-17":2400,"2015-16":2800,"2014-15":2500},{"PCON16CD":"E14000908","Region":"East Midlands","PCON16NM":"Rushcliffe","2016-17":2200,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000909","Region":"East Midlands","PCON16NM":"Rutland and Melton","2016-17":2100,"2015-16":2200,"2014-15":2000},{"PCON16CD":"E14000910","Region":"East of England","PCON16NM":"Saffron Walden","2016-17":2700,"2015-16":3000,"2014-15":2600},{"PCON16CD":"E14000911","Region":"North West","PCON16NM":"Salford and Eccles","2016-17":2000,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000912","Region":"South West","PCON16NM":"Salisbury","2016-17":1800,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000913","Region":"Yorkshire and The Humber","PCON16NM":"Scarborough and Whitby","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000914","Region":"Yorkshire and The Humber","PCON16NM":"Scunthorpe","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000915","Region":"North East","PCON16NM":"Sedgefield","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000916","Region":"North West","PCON16NM":"Sefton Central","2016-17":1100,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000917","Region":"Yorkshire and The Humber","PCON16NM":"Selby and Ainsty","2016-17":2000,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000918","Region":"South East","PCON16NM":"Sevenoaks","2016-17":2200,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000919","Region":"Yorkshire and The Humber","PCON16NM":"Sheffield Central","2016-17":2500,"2015-16":2900,"2014-15":2600},{"PCON16CD":"E14000920","Region":"Yorkshire and The Humber","PCON16NM":"Sheffield South East","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000921","Region":"Yorkshire and The Humber","PCON16NM":"Sheffield, Brightside and Hillsborough","2016-17":1200,"2015-16":1100,"2014-15":900},{"PCON16CD":"E14000922","Region":"Yorkshire and The Humber","PCON16NM":"Sheffield, Hallam","2016-17":1200,"2015-16":1300,"2014-15":1000},{"PCON16CD":"E14000923","Region":"Yorkshire and The Humber","PCON16NM":"Sheffield, Heeley","2016-17":800,"2015-16":900,"2014-15":800},{"PCON16CD":"E14000924","Region":"East Midlands","PCON16NM":"Sherwood","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000925","Region":"Yorkshire and The Humber","PCON16NM":"Shipley","2016-17":1500,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000926","Region":"West Midlands","PCON16NM":"Shrewsbury and Atcham","2016-17":2100,"2015-16":2200,"2014-15":2000},{"PCON16CD":"E14000927","Region":"South East","PCON16NM":"Sittingbourne and Sheppey","2016-17":1600,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000928","Region":"Yorkshire and The Humber","PCON16NM":"Skipton and Ripon","2016-17":2500,"2015-16":2600,"2014-15":2500},{"PCON16CD":"E14000929","Region":"East Midlands","PCON16NM":"Sleaford and North Hykeham","2016-17":2000,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000930","Region":"South East","PCON16NM":"Slough","2016-17":2500,"2015-16":2800,"2014-15":2100},{"PCON16CD":"E14000931","Region":"West Midlands","PCON16NM":"Solihull","2016-17":1600,"2015-16":1800,"2014-15":1500},{"PCON16CD":"E14000932","Region":"South West","PCON16NM":"Somerton and Frome","2016-17":2300,"2015-16":2600,"2014-15":2300},{"PCON16CD":"E14000933","Region":"East of England","PCON16NM":"South Basildon and East Thurrock","2016-17":1400,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000934","Region":"East of England","PCON16NM":"South Cambridgeshire","2016-17":2400,"2015-16":2700,"2014-15":2500},{"PCON16CD":"E14000935","Region":"East Midlands","PCON16NM":"South Derbyshire","2016-17":1500,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000936","Region":"South West","PCON16NM":"South Dorset","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14000937","Region":"East of England","PCON16NM":"South East Cambridgeshire","2016-17":2500,"2015-16":2700,"2014-15":2200},{"PCON16CD":"E14000938","Region":"South West","PCON16NM":"South East Cornwall","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000939","Region":"East Midlands","PCON16NM":"South Holland and The Deepings","2016-17":2000,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000940","Region":"East Midlands","PCON16NM":"South Leicestershire","2016-17":2100,"2015-16":2400,"2014-15":2000},{"PCON16CD":"E14000941","Region":"East of England","PCON16NM":"South Norfolk","2016-17":1800,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14000942","Region":"East Midlands","PCON16NM":"South Northamptonshire","2016-17":2400,"2015-16":2800,"2014-15":2300},{"PCON16CD":"E14000943","Region":"North West","PCON16NM":"South Ribble","2016-17":1700,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14000944","Region":"North East","PCON16NM":"South Shields","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"E14000945","Region":"West Midlands","PCON16NM":"South Staffordshire","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000946","Region":"East of England","PCON16NM":"South Suffolk","2016-17":1900,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000947","Region":"South West","PCON16NM":"South Swindon","2016-17":1600,"2015-16":2000,"2014-15":1900},{"PCON16CD":"E14000948","Region":"South East","PCON16NM":"South Thanet","2016-17":1500,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000949","Region":"East of England","PCON16NM":"South West Bedfordshire","2016-17":1800,"2015-16":2100,"2014-15":1800},{"PCON16CD":"E14000950","Region":"South West","PCON16NM":"South West Devon","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000951","Region":"East of England","PCON16NM":"South West Hertfordshire","2016-17":2700,"2015-16":3100,"2014-15":2700},{"PCON16CD":"E14000952","Region":"East of England","PCON16NM":"South West Norfolk","2016-17":1800,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14000953","Region":"South East","PCON16NM":"South West Surrey","2016-17":2800,"2015-16":3300,"2014-15":2900},{"PCON16CD":"E14000954","Region":"South West","PCON16NM":"South West Wiltshire","2016-17":1700,"2015-16":1900,"2014-15":1800},{"PCON16CD":"E14000955","Region":"South East","PCON16NM":"Southampton, Itchen","2016-17":1300,"2015-16":1600,"2014-15":1200},{"PCON16CD":"E14000956","Region":"South East","PCON16NM":"Southampton, Test","2016-17":1400,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000957","Region":"East of England","PCON16NM":"Southend West","2016-17":1600,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000958","Region":"North West","PCON16NM":"Southport","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000959","Region":"South East","PCON16NM":"Spelthorne","2016-17":1900,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000960","Region":"East of England","PCON16NM":"St Albans","2016-17":2400,"2015-16":3200,"2014-15":2500},{"PCON16CD":"E14000961","Region":"South West","PCON16NM":"St Austell and Newquay","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000962","Region":"North West","PCON16NM":"St Helens North","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"E14000963","Region":"North West","PCON16NM":"St Helens South and Whiston","2016-17":1300,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14000964","Region":"South West","PCON16NM":"St Ives","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000965","Region":"West Midlands","PCON16NM":"Stafford","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000966","Region":"West Midlands","PCON16NM":"Staffordshire Moorlands","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000967","Region":"North West","PCON16NM":"Stalybridge and Hyde","2016-17":1300,"2015-16":1400,"2014-15":1300},{"PCON16CD":"E14000968","Region":"East of England","PCON16NM":"Stevenage","2016-17":1400,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000969","Region":"North West","PCON16NM":"Stockport","2016-17":1700,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000970","Region":"North East","PCON16NM":"Stockton North","2016-17":1200,"2015-16":1500,"2014-15":1100},{"PCON16CD":"E14000971","Region":"North East","PCON16NM":"Stockton South","2016-17":1400,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14000972","Region":"West Midlands","PCON16NM":"Stoke-on-Trent Central","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000973","Region":"West Midlands","PCON16NM":"Stoke-on-Trent North","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"E14000974","Region":"West Midlands","PCON16NM":"Stoke-on-Trent South","2016-17":1000,"2015-16":1000,"2014-15":800},{"PCON16CD":"E14000975","Region":"West Midlands","PCON16NM":"Stone","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14000976","Region":"West Midlands","PCON16NM":"Stourbridge","2016-17":1400,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14000977","Region":"West Midlands","PCON16NM":"Stratford-on-Avon","2016-17":2500,"2015-16":2600,"2014-15":2300},{"PCON16CD":"E14000978","Region":"London","PCON16NM":"Streatham","2016-17":1400,"2015-16":1800,"2014-15":1200},{"PCON16CD":"E14000979","Region":"North West","PCON16NM":"Stretford and Urmston","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14000980","Region":"South West","PCON16NM":"Stroud","2016-17":2300,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14000981","Region":"East of England","PCON16NM":"Suffolk Coastal","2016-17":2100,"2015-16":2200,"2014-15":2000},{"PCON16CD":"E14000982","Region":"North East","PCON16NM":"Sunderland Central","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14000983","Region":"South East","PCON16NM":"Surrey Heath","2016-17":2200,"2015-16":2700,"2014-15":2300},{"PCON16CD":"E14000984","Region":"London","PCON16NM":"Sutton and Cheam","2016-17":1900,"2015-16":2200,"2014-15":1800},{"PCON16CD":"E14000985","Region":"West Midlands","PCON16NM":"Sutton Coldfield","2016-17":1600,"2015-16":1900,"2014-15":1900},{"PCON16CD":"E14000986","Region":"West Midlands","PCON16NM":"Tamworth","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"E14000987","Region":"North West","PCON16NM":"Tatton","2016-17":2400,"2015-16":2800,"2014-15":2300},{"PCON16CD":"E14000988","Region":"South West","PCON16NM":"Taunton Deane","2016-17":2000,"2015-16":2200,"2014-15":2000},{"PCON16CD":"E14000989","Region":"West Midlands","PCON16NM":"Telford","2016-17":1300,"2015-16":1300,"2014-15":1200},{"PCON16CD":"E14000990","Region":"South West","PCON16NM":"Tewkesbury","2016-17":1900,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14000991","Region":"South West","PCON16NM":"The Cotswolds","2016-17":2800,"2015-16":3100,"2014-15":2800},{"PCON16CD":"E14000992","Region":"West Midlands","PCON16NM":"The Wrekin","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"E14000993","Region":"Yorkshire and The Humber","PCON16NM":"Thirsk and Malton","2016-17":2500,"2015-16":2500,"2014-15":2300},{"PCON16CD":"E14000994","Region":"South West","PCON16NM":"Thornbury and Yate","2016-17":1700,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14000995","Region":"East of England","PCON16NM":"Thurrock","2016-17":2000,"2015-16":2200,"2014-15":1600},{"PCON16CD":"E14000996","Region":"South West","PCON16NM":"Tiverton and Honiton","2016-17":2100,"2015-16":2100,"2014-15":2000},{"PCON16CD":"E14000997","Region":"South East","PCON16NM":"Tonbridge and Malling","2016-17":2200,"2015-16":2400,"2014-15":2100},{"PCON16CD":"E14000998","Region":"London","PCON16NM":"Tooting","2016-17":1800,"2015-16":2300,"2014-15":1900},{"PCON16CD":"E14000999","Region":"South West","PCON16NM":"Torbay","2016-17":1700,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14001000","Region":"South West","PCON16NM":"Torridge and West Devon","2016-17":1900,"2015-16":1900,"2014-15":1800},{"PCON16CD":"E14001001","Region":"South West","PCON16NM":"Totnes","2016-17":2000,"2015-16":2000,"2014-15":1800},{"PCON16CD":"E14001002","Region":"London","PCON16NM":"Tottenham","2016-17":2400,"2015-16":2500,"2014-15":2000},{"PCON16CD":"E14001003","Region":"South West","PCON16NM":"Truro and Falmouth","2016-17":2000,"2015-16":2100,"2014-15":2000},{"PCON16CD":"E14001004","Region":"South East","PCON16NM":"Tunbridge Wells","2016-17":2400,"2015-16":2700,"2014-15":2500},{"PCON16CD":"E14001005","Region":"London","PCON16NM":"Twickenham","2016-17":2600,"2015-16":3500,"2014-15":2700},{"PCON16CD":"E14001006","Region":"North East","PCON16NM":"Tynemouth","2016-17":1400,"2015-16":1600,"2014-15":1500},{"PCON16CD":"E14001007","Region":"London","PCON16NM":"Uxbridge and South Ruislip","2016-17":2100,"2015-16":2500,"2014-15":2000},{"PCON16CD":"E14001008","Region":"London","PCON16NM":"Vauxhall","2016-17":3200,"2015-16":8900,"2014-15":3900},{"PCON16CD":"E14001009","Region":"Yorkshire and The Humber","PCON16NM":"Wakefield","2016-17":1800,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14001010","Region":"North West","PCON16NM":"Wallasey","2016-17":1000,"2015-16":1100,"2014-15":1000},{"PCON16CD":"E14001011","Region":"West Midlands","PCON16NM":"Walsall North","2016-17":1100,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14001012","Region":"West Midlands","PCON16NM":"Walsall South","2016-17":1500,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14001013","Region":"London","PCON16NM":"Walthamstow","2016-17":2100,"2015-16":2300,"2014-15":1900},{"PCON16CD":"E14001014","Region":"North East","PCON16NM":"Wansbeck","2016-17":1000,"2015-16":1100,"2014-15":900},{"PCON16CD":"E14001015","Region":"South East","PCON16NM":"Wantage","2016-17":2300,"2015-16":2500,"2014-15":2200},{"PCON16CD":"E14001016","Region":"West Midlands","PCON16NM":"Warley","2016-17":1300,"2015-16":1400,"2014-15":1100},{"PCON16CD":"E14001017","Region":"North West","PCON16NM":"Warrington North","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"E14001018","Region":"North West","PCON16NM":"Warrington South","2016-17":2200,"2015-16":5200,"2014-15":4800},{"PCON16CD":"E14001019","Region":"West Midlands","PCON16NM":"Warwick and Leamington","2016-17":2100,"2015-16":2500,"2014-15":2100},{"PCON16CD":"E14001020","Region":"North East","PCON16NM":"Washington and Sunderland West","2016-17":900,"2015-16":800,"2014-15":800},{"PCON16CD":"E14001021","Region":"East of England","PCON16NM":"Watford","2016-17":2500,"2015-16":2800,"2014-15":2500},{"PCON16CD":"E14001022","Region":"East of England","PCON16NM":"Waveney","2016-17":1500,"2015-16":1700,"2014-15":1600},{"PCON16CD":"E14001023","Region":"South East","PCON16NM":"Wealden","2016-17":2400,"2015-16":2600,"2014-15":2300},{"PCON16CD":"E14001024","Region":"North West","PCON16NM":"Weaver Vale","2016-17":1500,"2015-16":2000,"2014-15":1500},{"PCON16CD":"E14001025","Region":"East Midlands","PCON16NM":"Wellingborough","2016-17":1800,"2015-16":2000,"2014-15":1700},{"PCON16CD":"E14001026","Region":"South West","PCON16NM":"Wells","2016-17":2100,"2015-16":2300,"2014-15":2100},{"PCON16CD":"E14001027","Region":"East of England","PCON16NM":"Welwyn Hatfield","2016-17":2000,"2015-16":2200,"2014-15":1900},{"PCON16CD":"E14001028","Region":"Yorkshire and The Humber","PCON16NM":"Wentworth and Dearne","2016-17":1200,"2015-16":1300,"2014-15":1000},{"PCON16CD":"E14001029","Region":"West Midlands","PCON16NM":"West Bromwich East","2016-17":1200,"2015-16":1200,"2014-15":900},{"PCON16CD":"E14001030","Region":"West Midlands","PCON16NM":"West Bromwich West","2016-17":1400,"2015-16":1500,"2014-15":1100},{"PCON16CD":"E14001031","Region":"South West","PCON16NM":"West Dorset","2016-17":2400,"2015-16":2600,"2014-15":2500},{"PCON16CD":"E14001032","Region":"London","PCON16NM":"West Ham","2016-17":3600,"2015-16":2900,"2014-15":1900},{"PCON16CD":"E14001033","Region":"North West","PCON16NM":"West Lancashire","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14001034","Region":"East of England","PCON16NM":"West Suffolk","2016-17":2000,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14001035","Region":"West Midlands","PCON16NM":"West Worcestershire","2016-17":2200,"2015-16":2300,"2014-15":2100},{"PCON16CD":"E14001036","Region":"London","PCON16NM":"Westminster North","2016-17":2200,"2015-16":2500,"2014-15":1900},{"PCON16CD":"E14001037","Region":"North West","PCON16NM":"Westmorland and Lonsdale","2016-17":2400,"2015-16":2500,"2014-15":2300},{"PCON16CD":"E14001038","Region":"South West","PCON16NM":"Weston-Super-Mare","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14001039","Region":"North West","PCON16NM":"Wigan","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14001040","Region":"London","PCON16NM":"Wimbledon","2016-17":2700,"2015-16":3600,"2014-15":3400},{"PCON16CD":"E14001041","Region":"South East","PCON16NM":"Winchester","2016-17":2100,"2015-16":2500,"2014-15":2500},{"PCON16CD":"E14001042","Region":"South East","PCON16NM":"Windsor","2016-17":2600,"2015-16":3000,"2014-15":2700},{"PCON16CD":"E14001043","Region":"North West","PCON16NM":"Wirral South","2016-17":1100,"2015-16":1300,"2014-15":1200},{"PCON16CD":"E14001044","Region":"North West","PCON16NM":"Wirral West","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"E14001045","Region":"East of England","PCON16NM":"Witham","2016-17":1900,"2015-16":2100,"2014-15":1900},{"PCON16CD":"E14001046","Region":"South East","PCON16NM":"Witney","2016-17":2500,"2015-16":2700,"2014-15":2600},{"PCON16CD":"E14001047","Region":"South East","PCON16NM":"Woking","2016-17":2200,"2015-16":2600,"2014-15":2200},{"PCON16CD":"E14001048","Region":"South East","PCON16NM":"Wokingham","2016-17":2300,"2015-16":2800,"2014-15":2300},{"PCON16CD":"E14001049","Region":"West Midlands","PCON16NM":"Wolverhampton North East","2016-17":1000,"2015-16":1000,"2014-15":800},{"PCON16CD":"E14001050","Region":"West Midlands","PCON16NM":"Wolverhampton South East","2016-17":1300,"2015-16":1400,"2014-15":1100},{"PCON16CD":"E14001051","Region":"West Midlands","PCON16NM":"Wolverhampton South West","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"E14001052","Region":"West Midlands","PCON16NM":"Worcester","2016-17":1500,"2015-16":1600,"2014-15":1300},{"PCON16CD":"E14001053","Region":"North West","PCON16NM":"Workington","2016-17":1300,"2015-16":1500,"2014-15":1500},{"PCON16CD":"E14001054","Region":"North West","PCON16NM":"Worsley and Eccles South","2016-17":1300,"2015-16":1500,"2014-15":1200},{"PCON16CD":"E14001055","Region":"South East","PCON16NM":"Worthing West","2016-17":1600,"2015-16":1900,"2014-15":1600},{"PCON16CD":"E14001056","Region":"South East","PCON16NM":"Wycombe","2016-17":2200,"2015-16":2500,"2014-15":2100},{"PCON16CD":"E14001057","Region":"North West","PCON16NM":"Wyre and Preston North","2016-17":1700,"2015-16":1900,"2014-15":1700},{"PCON16CD":"E14001058","Region":"West Midlands","PCON16NM":"Wyre Forest","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14001059","Region":"North West","PCON16NM":"Wythenshawe and Sale East","2016-17":1400,"2015-16":1700,"2014-15":1300},{"PCON16CD":"E14001060","Region":"South West","PCON16NM":"Yeovil","2016-17":1700,"2015-16":1900,"2014-15":1800},{"PCON16CD":"E14001061","Region":"Yorkshire and The Humber","PCON16NM":"York Central","2016-17":1600,"2015-16":1800,"2014-15":1600},{"PCON16CD":"E14001062","Region":"Yorkshire and The Humber","PCON16NM":"York Outer","2016-17":1700,"2015-16":1800,"2014-15":1600},{"PCON16CD":"N06000001","Region":"Northern Ireland","PCON16NM":"Belfast East","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"N06000002","Region":"Northern Ireland","PCON16NM":"Belfast North","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"N06000003","Region":"Northern Ireland","PCON16NM":"Belfast South","2016-17":2400,"2015-16":2500,"2014-15":2300},{"PCON16CD":"N06000004","Region":"Northern Ireland","PCON16NM":"Belfast West","2016-17":1000,"2015-16":900,"2014-15":800},{"PCON16CD":"N06000005","Region":"Northern Ireland","PCON16NM":"East Antrim","2016-17":1000,"2015-16":1100,"2014-15":900},{"PCON16CD":"N06000006","Region":"Northern Ireland","PCON16NM":"East Londonderry","2016-17":1600,"2015-16":1600,"2014-15":1500},{"PCON16CD":"N06000007","Region":"Northern Ireland","PCON16NM":"Fermanagh and South Tyrone","2016-17":2200,"2015-16":2100,"2014-15":1900},{"PCON16CD":"N06000008","Region":"Northern Ireland","PCON16NM":"Foyle","2016-17":1400,"2015-16":1300,"2014-15":1200},{"PCON16CD":"N06000009","Region":"Northern Ireland","PCON16NM":"Lagan Valley","2016-17":1700,"2015-16":1700,"2014-15":1600},{"PCON16CD":"N06000010","Region":"Northern Ireland","PCON16NM":"Mid Ulster","2016-17":2100,"2015-16":2000,"2014-15":1800},{"PCON16CD":"N06000011","Region":"Northern Ireland","PCON16NM":"Newry and Armagh","2016-17":2400,"2015-16":2300,"2014-15":2100},{"PCON16CD":"N06000012","Region":"Northern Ireland","PCON16NM":"North Antrim","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"N06000013","Region":"Northern Ireland","PCON16NM":"North Down","2016-17":1200,"2015-16":1200,"2014-15":1100},{"PCON16CD":"N06000014","Region":"Northern Ireland","PCON16NM":"South Antrim","2016-17":1500,"2015-16":1400,"2014-15":1300},{"PCON16CD":"N06000015","Region":"Northern Ireland","PCON16NM":"South Down","2016-17":1900,"2015-16":1900,"2014-15":1800},{"PCON16CD":"N06000016","Region":"Northern Ireland","PCON16NM":"Strangford","2016-17":1500,"2015-16":1500,"2014-15":1300},{"PCON16CD":"N06000017","Region":"Northern Ireland","PCON16NM":"Upper Bann","2016-17":1800,"2015-16":1700,"2014-15":1700},{"PCON16CD":"N06000018","Region":"Northern Ireland","PCON16NM":"West Tyrone","2016-17":1800,"2015-16":1700,"2014-15":1600},{"PCON16CD":"S14000001","Region":"Scotland","PCON16NM":"Aberdeen North","2016-17":1200,"2015-16":1500,"2014-15":1500},{"PCON16CD":"S14000002","Region":"Scotland","PCON16NM":"Aberdeen South","2016-17":2100,"2015-16":3300,"2014-15":3500},{"PCON16CD":"S14000003","Region":"Scotland","PCON16NM":"Airdrie and Shotts","2016-17":900,"2015-16":1000,"2014-15":1000},{"PCON16CD":"S14000004","Region":"Scotland","PCON16NM":"Angus","2016-17":1500,"2015-16":1700,"2014-15":1700},{"PCON16CD":"S14000005","Region":"Scotland","PCON16NM":"Argyll and Bute","2016-17":1800,"2015-16":1800,"2014-15":1700},{"PCON16CD":"S14000006","Region":"Scotland","PCON16NM":"Ayr, Carrick and Cumnock","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"S14000007","Region":"Scotland","PCON16NM":"Banff and Buchan","2016-17":1800,"2015-16":2200,"2014-15":2100},{"PCON16CD":"S14000008","Region":"Scotland","PCON16NM":"Berwickshire, Roxburgh and Selkirk","2016-17":2100,"2015-16":2100,"2014-15":2000},{"PCON16CD":"S14000009","Region":"Scotland","PCON16NM":"Caithness, Sutherland and Easter Ross","2016-17":1200,"2015-16":1400,"2014-15":1300},{"PCON16CD":"S14000010","Region":"Scotland","PCON16NM":"Central Ayrshire","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"S14000011","Region":"Scotland","PCON16NM":"Coatbridge, Chryston and Bellshill","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"S14000012","Region":"Scotland","PCON16NM":"Cumbernauld, Kilsyth and Kirkintilloch East","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"S14000013","Region":"Scotland","PCON16NM":"Dumfries and Galloway","2016-17":2100,"2015-16":2100,"2014-15":2000},{"PCON16CD":"S14000014","Region":"Scotland","PCON16NM":"Dumfriesshire, Clydesdale and Tweeddale","2016-17":1700,"2015-16":1700,"2014-15":1600},{"PCON16CD":"S14000015","Region":"Scotland","PCON16NM":"Dundee East","2016-17":1000,"2015-16":1100,"2014-15":1000},{"PCON16CD":"S14000016","Region":"Scotland","PCON16NM":"Dundee West","2016-17":1200,"2015-16":1200,"2014-15":1200},{"PCON16CD":"S14000017","Region":"Scotland","PCON16NM":"Dunfermline and West Fife","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"S14000018","Region":"Scotland","PCON16NM":"East Dunbartonshire","2016-17":1100,"2015-16":1300,"2014-15":1100},{"PCON16CD":"S14000019","Region":"Scotland","PCON16NM":"East Kilbride, Strathaven and Lesmahagow","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"S14000020","Region":"Scotland","PCON16NM":"East Lothian","2016-17":1500,"2015-16":1600,"2014-15":1600},{"PCON16CD":"S14000021","Region":"Scotland","PCON16NM":"East Renfrewshire","2016-17":1200,"2015-16":1300,"2014-15":1200},{"PCON16CD":"S14000022","Region":"Scotland","PCON16NM":"Edinburgh East","2016-17":1600,"2015-16":1800,"2014-15":1300},{"PCON16CD":"S14000023","Region":"Scotland","PCON16NM":"Edinburgh North and Leith","2016-17":3100,"2015-16":3600,"2014-15":3600},{"PCON16CD":"S14000024","Region":"Scotland","PCON16NM":"Edinburgh South","2016-17":1000,"2015-16":1300,"2014-15":1100},{"PCON16CD":"S14000025","Region":"Scotland","PCON16NM":"Edinburgh South West","2016-17":1500,"2015-16":1700,"2014-15":1500},{"PCON16CD":"S14000026","Region":"Scotland","PCON16NM":"Edinburgh West","2016-17":1200,"2015-16":1600,"2014-15":1300},{"PCON16CD":"S14000027","Region":"Scotland","PCON16NM":"Na h-Eileanan an Iar","2016-17":500,"2015-16":500,"2014-15":400},{"PCON16CD":"S14000028","Region":"Scotland","PCON16NM":"Falkirk","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"S14000029","Region":"Scotland","PCON16NM":"Glasgow Central","2016-17":4000,"2015-16":4600,"2014-15":4400},{"PCON16CD":"S14000030","Region":"Scotland","PCON16NM":"Glasgow East","2016-17":1000,"2015-16":1000,"2014-15":800},{"PCON16CD":"S14000031","Region":"Scotland","PCON16NM":"Glasgow North","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"S14000032","Region":"Scotland","PCON16NM":"Glasgow North East","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"S14000033","Region":"Scotland","PCON16NM":"Glasgow North West","2016-17":800,"2015-16":900,"2014-15":800},{"PCON16CD":"S14000034","Region":"Scotland","PCON16NM":"Glasgow South","2016-17":800,"2015-16":1000,"2014-15":800},{"PCON16CD":"S14000035","Region":"Scotland","PCON16NM":"Glasgow South West","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"S14000036","Region":"Scotland","PCON16NM":"Glenrothes","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"S14000037","Region":"Scotland","PCON16NM":"Gordon","2016-17":2100,"2015-16":2700,"2014-15":2700},{"PCON16CD":"S14000038","Region":"Scotland","PCON16NM":"Inverclyde","2016-17":800,"2015-16":900,"2014-15":800},{"PCON16CD":"S14000039","Region":"Scotland","PCON16NM":"Inverness, Nairn, Badenoch and Strathspey","2016-17":1900,"2015-16":2100,"2014-15":1900},{"PCON16CD":"S14000040","Region":"Scotland","PCON16NM":"Kilmarnock and Loudoun","2016-17":1300,"2015-16":1400,"2014-15":1300},{"PCON16CD":"S14000041","Region":"Scotland","PCON16NM":"Kirkcaldy and Cowdenbeath","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"S14000042","Region":"Scotland","PCON16NM":"Lanark and Hamilton East","2016-17":1600,"2015-16":1800,"2014-15":1700},{"PCON16CD":"S14000043","Region":"Scotland","PCON16NM":"Linlithgow and East Falkirk","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"S14000044","Region":"Scotland","PCON16NM":"Livingston","2016-17":1300,"2015-16":1500,"2014-15":1300},{"PCON16CD":"S14000045","Region":"Scotland","PCON16NM":"Midlothian","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"S14000046","Region":"Scotland","PCON16NM":"Moray","2016-17":1600,"2015-16":1700,"2014-15":1700},{"PCON16CD":"S14000047","Region":"Scotland","PCON16NM":"Motherwell and Wishaw","2016-17":1000,"2015-16":1000,"2014-15":900},{"PCON16CD":"S14000048","Region":"Scotland","PCON16NM":"North Ayrshire and Arran","2016-17":1100,"2015-16":1200,"2014-15":1100},{"PCON16CD":"S14000049","Region":"Scotland","PCON16NM":"North East Fife","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"S14000050","Region":"Scotland","PCON16NM":"Ochil and South Perthshire","2016-17":1500,"2015-16":1600,"2014-15":1500},{"PCON16CD":"S14000051","Region":"Scotland","PCON16NM":"Orkney and Shetland","2016-17":1100,"2015-16":1100,"2014-15":1000},{"PCON16CD":"S14000052","Region":"Scotland","PCON16NM":"Paisley and Renfrewshire North","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"S14000053","Region":"Scotland","PCON16NM":"Paisley and Renfrewshire South","2016-17":1100,"2015-16":1100,"2014-15":1000},{"PCON16CD":"S14000054","Region":"Scotland","PCON16NM":"Perth and North Perthshire","2016-17":1900,"2015-16":2000,"2014-15":1900},{"PCON16CD":"S14000055","Region":"Scotland","PCON16NM":"Ross, Skye and Lochaber","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"S14000056","Region":"Scotland","PCON16NM":"Rutherglen and Hamilton West","2016-17":1200,"2015-16":1200,"2014-15":1100},{"PCON16CD":"S14000057","Region":"Scotland","PCON16NM":"Stirling","2016-17":1800,"2015-16":2000,"2014-15":1900},{"PCON16CD":"S14000058","Region":"Scotland","PCON16NM":"West Aberdeenshire and Kincardine","2016-17":2200,"2015-16":2900,"2014-15":2700},{"PCON16CD":"S14000059","Region":"Scotland","PCON16NM":"West Dunbartonshire","2016-17":1000,"2015-16":1000,"2014-15":900},{"PCON16CD":"W07000049","Region":"Wales","PCON16NM":"Aberavon","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"W07000058","Region":"Wales","PCON16NM":"Aberconwy","2016-17":1100,"2015-16":1200,"2014-15":1000},{"PCON16CD":"W07000043","Region":"Wales","PCON16NM":"Alyn and Deeside","2016-17":1300,"2015-16":1400,"2014-15":1200},{"PCON16CD":"W07000057","Region":"Wales","PCON16NM":"Arfon","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"W07000072","Region":"Wales","PCON16NM":"Blaenau Gwent","2016-17":700,"2015-16":700,"2014-15":600},{"PCON16CD":"W07000068","Region":"Wales","PCON16NM":"Brecon and Radnorshire","2016-17":1500,"2015-16":1500,"2014-15":1300},{"PCON16CD":"W07000073","Region":"Wales","PCON16NM":"Bridgend","2016-17":1200,"2015-16":1600,"2014-15":1100},{"PCON16CD":"W07000076","Region":"Wales","PCON16NM":"Caerphilly","2016-17":1000,"2015-16":1100,"2014-15":900},{"PCON16CD":"W07000050","Region":"Wales","PCON16NM":"Cardiff Central","2016-17":1500,"2015-16":1500,"2014-15":1300},{"PCON16CD":"W07000051","Region":"Wales","PCON16NM":"Cardiff North","2016-17":1100,"2015-16":1300,"2014-15":1200},{"PCON16CD":"W07000080","Region":"Wales","PCON16NM":"Cardiff South and Penarth","2016-17":1900,"2015-16":2000,"2014-15":1700},{"PCON16CD":"W07000079","Region":"Wales","PCON16NM":"Cardiff West","2016-17":1200,"2015-16":1400,"2014-15":1200},{"PCON16CD":"W07000067","Region":"Wales","PCON16NM":"Carmarthen East and Dinefwr","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"W07000066","Region":"Wales","PCON16NM":"Carmarthen West and South Pembrokeshire","2016-17":1600,"2015-16":1700,"2014-15":1600},{"PCON16CD":"W07000064","Region":"Wales","PCON16NM":"Ceredigion","2016-17":1400,"2015-16":1400,"2014-15":1300},{"PCON16CD":"W07000062","Region":"Wales","PCON16NM":"Clwyd South","2016-17":1000,"2015-16":1000,"2014-15":900},{"PCON16CD":"W07000059","Region":"Wales","PCON16NM":"Clwyd West","2016-17":1200,"2015-16":1300,"2014-15":1200},{"PCON16CD":"W07000070","Region":"Wales","PCON16NM":"Cynon Valley","2016-17":700,"2015-16":700,"2014-15":600},{"PCON16CD":"W07000042","Region":"Wales","PCON16NM":"Delyn","2016-17":1100,"2015-16":1200,"2014-15":1100},{"PCON16CD":"W07000061","Region":"Wales","PCON16NM":"Dwyfor Meirionnydd","2016-17":1300,"2015-16":1300,"2014-15":1200},{"PCON16CD":"W07000046","Region":"Wales","PCON16NM":"Gower","2016-17":1000,"2015-16":1000,"2014-15":900},{"PCON16CD":"W07000077","Region":"Wales","PCON16NM":"Islwyn","2016-17":800,"2015-16":900,"2014-15":900},{"PCON16CD":"W07000045","Region":"Wales","PCON16NM":"Llanelli","2016-17":900,"2015-16":1000,"2014-15":900},{"PCON16CD":"W07000071","Region":"Wales","PCON16NM":"Merthyr Tydfil and Rhymney","2016-17":800,"2015-16":800,"2014-15":700},{"PCON16CD":"W07000054","Region":"Wales","PCON16NM":"Monmouth","2016-17":1700,"2015-16":1700,"2014-15":1600},{"PCON16CD":"W07000063","Region":"Wales","PCON16NM":"Montgomeryshire","2016-17":1400,"2015-16":1400,"2014-15":1200},{"PCON16CD":"W07000069","Region":"Wales","PCON16NM":"Neath","2016-17":800,"2015-16":900,"2014-15":800},{"PCON16CD":"W07000055","Region":"Wales","PCON16NM":"Newport East","2016-17":900,"2015-16":1000,"2014-15":800},{"PCON16CD":"W07000056","Region":"Wales","PCON16NM":"Newport West","2016-17":1200,"2015-16":1300,"2014-15":1100},{"PCON16CD":"W07000074","Region":"Wales","PCON16NM":"Ogmore","2016-17":800,"2015-16":900,"2014-15":700},{"PCON16CD":"W07000075","Region":"Wales","PCON16NM":"Pontypridd","2016-17":1200,"2015-16":1200,"2014-15":1100},{"PCON16CD":"W07000065","Region":"Wales","PCON16NM":"Preseli Pembrokeshire","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"W07000052","Region":"Wales","PCON16NM":"Rhondda","2016-17":600,"2015-16":600,"2014-15":600},{"PCON16CD":"W07000048","Region":"Wales","PCON16NM":"Swansea East","2016-17":900,"2015-16":900,"2014-15":900},{"PCON16CD":"W07000047","Region":"Wales","PCON16NM":"Swansea West","2016-17":1300,"2015-16":1300,"2014-15":1100},{"PCON16CD":"W07000053","Region":"Wales","PCON16NM":"Torfaen","2016-17":1000,"2015-16":1000,"2014-15":900},{"PCON16CD":"W07000060","Region":"Wales","PCON16NM":"Vale of Clwyd","2016-17":1200,"2015-16":1200,"2014-15":1100},{"PCON16CD":"W07000078","Region":"Wales","PCON16NM":"Vale of Glamorgan","2016-17":1400,"2015-16":1500,"2014-15":1300},{"PCON16CD":"W07000044","Region":"Wales","PCON16NM":"Wrexham","2016-17":1100,"2015-16":1300,"2014-15":1100},{"PCON16CD":"W07000041","Region":"Wales","PCON16NM":"Ynys Môn","2016-17":1000,"2015-16":1000,"2014-15":900}] ;
+ var mapLookup = d3.map();
+ 
+ mydata.forEach( function(d) { mapLookup.set(Object.values(d)[0], d);  });
+         
+ // Function chooses colour based on data value (like IF..THEN..ELSE)
+ var mypalette = ["#F7FCFD","#E5F5F9","#CCECE6","#99D8C9","#66C2A4","#41AE76","#238B45","#006D2C","#00441B"];
+ var myBins = schema.lgdBin;
+ 
+ function getColor(d) {
+  for (i = myBins.length - 1; i >=0; --i) {
+    if ( d >= myBins[i]) { return mypalette[ i ]; }
+  }
+  return 'grey';
+ }
+ 
+ 
+ var nfmt = d3.format(schema.nFormat);
+ 
+ // Set the style of the boundary data layer & the tooltip
+ function handleLayer1(layer) { 
+    var areaname = layer.feature.properties["pcon16nm"]; // Area Name
+    var areacode = layer.feature.properties["pcon16cd"]; // Area ONS code
+    
+    layer.setStyle({ fillColor : getColor(mapLookup.get(areacode)[col_for_stat]),
+                     fillOpacity: 1,
+                     color: '#101010' ,
+                     weight:0.5,
+                     opacity: 1 });
+    
+    layer.bindTooltip( areaname + ' <br/> ' + areacode + ' <br/> '
+                       + schema.toolTipText + nfmt(mapLookup.get(areacode)[col_for_stat])
+                      , {className: 'cssTooltip', sticky: true, direction: 'auto', offset: [0, 0]}
+                     );
+    
+    layer.on({ mouseover : enterLayer,
+               mouseout: leaveLayer  });
+ }
+  
+ function enterLayer(){  this.setStyle({ weight: 3, color: 'black' }); }
+ function leaveLayer(){  this.setStyle({ weight: 0.5, color: '#101010' }); }
+ 
+ function handleLayer2(layer) { 
+    layer.setStyle({ fillColor : 'white',
+                     fillOpacity: 0,
+                     color: 'black',
+                     weight: 1,
+                     opacity: 1 });
+ } 
+  
+ // Add legend
+ var legend = L.control({position: 'topright'});
+  
+ legend.onAdd = function (map) { 
+                 var div = L.DomUtil.create('div', 'info legend');
+                 var labels = [];
+                 div.innerHTML += '<b>' + schema.lgdTitle + '</b><br>'
+                    for (var i = 0; i < myBins.length; i++) {
+                         div.innerHTML += '<i style="background:' + getColor(myBins[i] + 0.001) + '"></i> '
+                         +  nfmt(myBins[i]) + (myBins[i + 1] + 0.001 ? ' to ' + nfmt(myBins[i + 1]) + '<br>' : ' +');
+                    }
+                 return div;
+ };
+ legend.addTo(map);
+
+
+ // Add a Search bar to the map
+ var searchControl = new L.Control.Search({
+                         layer: searchLayer,
+                         propertyName: "pcon16nm",
+                         marker: false,
+                         moveToLocation: function(latlng, title, map) {
+                                          var zoom = map.getBoundsZoom(latlng.layer.getBounds()) - 1.5;
+                                      map.setView(latlng, zoom); 
+                                                                      }
+ });
+ map.addControl(searchControl); 
+
+
+</script>
+<p><br></p>
+<div class="page-break">
+
+</div>
+<h1 id="take-up-by-employer-size">6 Take-up by Employer Size</h1>
+<table class="gmisc_table" style="border-collapse: collapse; width: 90%; table-layout: auto; word-wrap: break-word;">
+<thead>
+<tr>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: left;">
+Employer size by number of employees
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+Employers<br>benefiting
+</th>
+<th style="border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: right;">
+As a percentage of all<br>employers benefitting
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">
+1-9
+</td>
+<td style="text-align: right;">
+946,000
+</td>
+<td style="text-align: right;">
+81%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+10-49
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+188,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+16%
+</td>
+</tr>
+<tr>
+<td style="text-align: left;">
+50-249
+</td>
+<td style="text-align: right;">
+31,000
+</td>
+<td style="text-align: right;">
+3%
+</td>
+</tr>
+<tr style="background-color: #f7f7f7;">
+<td style="background-color: #f7f7f7; text-align: left;">
+250+
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+5,000
+</td>
+<td style="background-color: #f7f7f7; text-align: right;">
+&lt;1%
+</td>
+</tr>
+<tr>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: left;">
+All employers
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: right;">
+1,170,000
+</td>
+<td style="border-bottom: 2px solid grey; border-top: 1px solid grey; font-weight: bold; text-align: right;">
+100%
+</td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:10px; line-height:1.4;">
+<sup>1</sup> Figures are rounded to the nearest 1,000.<br />
+<sup>2</sup> Total may not necessarily add up to the sum of employer sizes due to rounding.<br />
+<sup>3</sup> Take up estimates are based on information from HMRC’s Real Time Information (RTI) and Enterprise Tax Management Platform (ETMP) data systems.<br />
+<sup>4</sup> Cases without employer size information have been apportioned across bands based on the distribution of cases where employer information is known.
+</p>
+<p><br></p>
+<div class="page-break">
+
+</div>
+<h1 id="methodology">7 Methodology</h1>
+<p style="border:2px; border-style:solid; padding: 1em;">
+An Official Statistics Publication <br> These Official Statistics are produced to high professional standards in accordance with the Statistics and Registration Service Act 2007, signifying compliance with the Code of Practice for Official Statistics. They will undergo regular quality assurance reviews to ensure that they meet customer needs and are produced free from any political interference.
+</p>
+<ol style="list-style-type: decimal">
+<li><p>Counts for the number of employers who have taken up the Employment Allowance (EA) come from the PAYE accounting system (the Enterprise Tax Management Platform - ETMP) linked to the Real Time Information (RTI).</p></li>
+<li><p>A PAYE scheme will be counted if they have both claimed the EA and have offset some amount of the EA against their Class 1 secondary NICs liabilities.</p></li>
+<li><p>Postcode information, which is used to present region and constituency level breakdowns, has been taken from the Office for National Statistics’ Inter-departmental Business Registry (IDBR). The IDBR to the ETMP produced a match rate of 93% for postcode information. The postcode used corresponds to the PAYE scheme which is claiming the EA.</p></li>
+<li><p>Sector information also comes from the IDBR based on the Standard Industry Classification (SIC) 2007. At 93%, the match rate for sector is similar to that of postcode.</p></li>
+<li><p>Employee size information comes from RTI and is a measure of employee count corresponding to the PAYE scheme which is claiming the EA. The match rate is close to 100%.</p></li>
+</ol>
+<p><br></p>
+<div class="page-break">
+
+</div>
+<h1 id="user-engagement">8 User Engagement</h1>
+<p>HMRC is committed to providing impartial quality statistics that meet our users’ needs. We encourage our users to engage with us so that we can improve our statistics and identify gaps in the statistics that we produce. Please see the following link for HMRC Statistics “Continuous User Engagement Strategy”:<br> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/278751/HMRC_statistics_continous_user_engagement.pdf" class="uri">https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/278751/HMRC_statistics_continous_user_engagement.pdf</a></p>
+<p>If you would like to comment on these statistics or have any enquiries on the statistics please use the statistical contacts named at the end of this section and on the cover page.</p>
+<p>Statistical contacts:</p>
+<p>David McDonald<br />
+03000 561 367<br />
+<a href="mailto:david.mcdonald@hmrc.gsi.gov.uk">david.mcdonald@hmrc.gsi.gov.uk</a></p>
+<p>Cathal McDermott<br />
+03000 584 769<br />
+<a href="mailto:cathal.mcdermott@hmrc.gsi.gov.uk">cathal.mcdermott@hmrc.gsi.gov.uk</a></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "empall_spine_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
